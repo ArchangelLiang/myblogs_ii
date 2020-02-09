@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+		<title>关于我</title>
+		<link rel="stylesheet" href="../static/css/normal.css" th:href="@{/css/normal.css}">
+		<link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}"/>
+		<link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}"/>
+		<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+		<link rel="stylesheet" media="screen and (min-width: 992px)" href="../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+		<link rel="stylesheet" media="screen and (max-width: 991px)" href="../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}"/>
+		<script src="../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+		<link rel="stylesheet" href="../static/fonts/my_icon/iconfont.css" th:href="@{/fonts/my_icon/iconfont.css}"/>
+		<script>
+			window.onload = function(){
+				function mouseEvent(ele,ele_body){
+					ele.addEventListener('mouseover',function(){
+						ele_body.style.display='block';
+					});
+					ele.addEventListener('mouseout',function(){
+						ele_body.style.display='none';
+					});
+				}
+				let qq = document.querySelector('.my-contact-QQ');
+				let qq_body = document.getElementById('my-contact-QQ-body');
+				mouseEvent(qq,qq_body);
+				let wx = document.querySelector('.my-contact-wechat');
+				let wx_body = document.querySelector('#my-contact-wechat-body');
+				mouseEvent(wx,wx_body);
+			}
+		</script>
+	</head>
+	<body class="container-fluid">
+<!--		&lt;!&ndash;导航模块&ndash;&gt;
+		<nav class="navbar navbar-inverse my-nav">
+			<div class="container-fluid">
+				&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">GwgBlog</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
+						<li><a href="categories.html">分类</a></li>
+						<li><a href="total.html">归档</a></li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="输入您感兴趣的内容">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
+					</ul>
+				</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+			</div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+		</nav>-->
+<!--引入导航模块-->
+<nav th:replace="~{common_fragment::nav('')}"></nav>
+		<!--关于我-->
+		<div class="my-me row">
+				<div class="col-md-7 my-me-img">
+					<img class="img-rounded" width="100%" src="../static/image/me.jpg" th:src="@{/image/me.jpg}" />
+				</div>
+				<div class="col-md-5 my-me-list">
+					<ul class="list-group">
+						<li class="list-group-item"><span style="font-size: 20px;font-weight: 700;">关于我</span></li>
+						<li class="list-group-item">
+							<p style="color: #737373">hello，欢迎来到我的个人博客，我会在这里记录一些我平时的学习笔记，以及开发中遇到的一些问题的解决方案，希望能帮助到每一位来到这里的朋友。</p>
+							<p style="color: #737373">高文港，一个自学开发者，热爱编程，相信 Code changes the world！</p>
+							<p style="color: #737373">I love programming, don't you?</p>
+						</li>
+						<li class="list-group-item">
+							<span class="my-hobby">编程</span>
+							<span class="my-hobby">运动</span>
+							<span class="my-hobby">阅读</span>
+							<span class="my-hobby">游戏</span>
+							<span class="my-hobby">电影</span>
+						</li>
+						<li class="list-group-item">
+							<span class="my-skill">Java</span>
+							<span class="my-skill">JavaScript</span>
+							<span class="my-skill">HTML</span>
+							<span class="my-skill">CSS</span>
+							<span class="my-skill">Bootstrap</span>
+							<span class="my-skill">JQuery</span>
+							<span class="my-skill">MySQL</span>
+							<span class="my-skill">...</span>
+						</li>
+						<li class="list-group-item">
+							交个朋友？
+						</li>
+						<li class="list-group-item">
+							<button class="my-contact my-contact-QQ iconfont icon-QQ"></button>
+							<div id="my-contact-QQ-body">QQ:&nbsp;2320322504</div>
+							<button class="my-contact my-contact-wechat iconfont icon-wechat"></button>
+							<div id="my-contact-wechat-body">weixin:&nbsp;GWG1321</div>
+							<a href="https://github.com/ArchangelLiang" class="my-contact my-contact-github iconfont icon-github"></a>
+						</li>
+					</ul>
+				</div>
+		</div>
+		<!-- 页脚 -->
+		<footer th:replace="common_fragment::footer" class="row">
+			<div class="footer-top row">
+				<div class="footer-top-p">
+					<div class="footer-one col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">编程之道</p>
+						<p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+						<p class="col-sm-4 col-md-12">全民编程</p>
+					</div>
+					<div class="footer-two col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">编程之道</p>
+						<p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+						<p class="col-sm-4 col-md-12">全民编程</p>
+					</div>
+					<div class="footer-three col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">联系我</p>
+						<p class="col-sm-4 col-md-12">QQ：2320322504</p>
+						<p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
+					</div>
+					<div class="footer-four col-md-3 col-sm-12">
+						<img src="../static/image/personalCode.jpg" />
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+			</div>
+		</footer>
+	</body>
+</html>

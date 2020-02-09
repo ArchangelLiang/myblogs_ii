@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+		<title>主页</title>
+		<link rel="stylesheet" href="../static/css/normal.css"  th:href="@{/css/normal.css}">
+		<link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+		<link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}"/>
+		<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+		<link rel="stylesheet" media="screen and (min-width: 992px)" href="../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+		<link rel="stylesheet" media="screen and (max-width: 991px)" href="../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}" />
+		<script src="../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+	</head>
+	<body class="container-fluid">
+<!--		&lt;!&ndash;导航模块&ndash;&gt;
+		<nav class="navbar navbar-inverse my-nav">
+			<div class="container-fluid">
+				&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					 aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">GwgBlog</a>
+				</div>
+
+				&lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
+						<li><a href="categories.html">分类</a></li>
+						<li><a href="total.html">归档</a></li>
+					</ul>
+					<form class="navbar-form navbar-left">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="输入您感兴趣的内容">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
+					</ul>
+				</div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+			</div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+		</nav>-->
+<!--引入导航模块-->
+<nav th:replace="~{common_fragment::nav('h')}"></nav>
+		<!--巨幕-->
+		<div class="my-big-main">
+			<div class="jumbotron main">
+				<h1 class="welcome">Welcome to my blog</h1>
+				<p class="title"></p>
+			</div>
+		</div>
+		<!--正文-->
+		<div class="row primary">
+			<!--主内容区域-->
+			<div class="col-md-8 col-sm-12 primary_col">
+				<div class="primary-content-title">
+					<strong>博客</strong>
+				</div>
+				<div class="primary-content">
+					<div class="panel panel-default content-cart">
+						<a href="blog.html">
+							<div class="panel-heading content-title">Spring相关知识点总结</div>
+							<div class="panel-body">
+								<div class="blog-content col-md-8 col-sm-12">
+									IOC（Inversion of Control/控制反转）相关内容
+									--------------------------------------------------------------------------------
+									概念：
+									控制：资源的获取方式；
+									主动式：要什么资源自己直接new。
+									被动式： 资源的获取不是我们自己创建，而是交给一个容器来创建和设置。
+									反转：对象的获取由当初的主动创建变为被动获取，对象获取方式的控制权交给spring；
+									作用：降低程序之间的耦合；
+									ioc容器或者说是单例池：
+									本质就是一个map（singletonObjects）；
+									容器启动时创建所有单实例对象；
+									我们可以直接从容器中获取这些对象；
+								</div>
+								<!--<a href="#" class="img-top col-md-4 col-sm-4">
+                                        <img class="col-md-12 col-sm-12" src="image/text-right.jpg">
+                                </a>-->
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<a href="#" class="thumbnail my-image">
+											<img th:src="@{/image/text-right.jpg}" src="../static/image/text-right.jpg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="publish-date row">
+								<span class="my-date col-md-2">
+									<i class="glyphicon glyphicon-calendar"></i>&nbsp;2019-09-11
+								</span>&nbsp;&nbsp;&nbsp;
+									<span class="my-see_num col-md-5"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;199</span>
+									<span class="my-mark col-md-1">java</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="panel panel-default content-cart">
+						<a href="blog.html">
+							<div class="panel-heading content-title">Spring相关知识点总结</div>
+							<div class="panel-body">
+								<div class="blog-content col-md-8 col-sm-12">
+									IOC（Inversion of Control/控制反转）相关内容
+									--------------------------------------------------------------------------------
+									概念：
+									控制：资源的获取方式；
+									主动式：要什么资源自己直接new。
+									被动式： 资源的获取不是我们自己创建，而是交给一个容器来创建和设置。
+									反转：对象的获取由当初的主动创建变为被动获取，对象获取方式的控制权交给spring；
+									作用：降低程序之间的耦合；
+									ioc容器或者说是单例池：
+									本质就是一个map（singletonObjects）；
+									容器启动时创建所有单实例对象；
+									我们可以直接从容器中获取这些对象；
+								</div>
+								<!--<a href="#" class="img-top col-md-4 col-sm-4">
+                                        <img class="col-md-12 col-sm-12" src="image/text-right.jpg">
+                                </a>-->
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<a href="#" class="thumbnail my-image">
+											<img th:src="@{/image/text-right.jpg}" src="../static/image/text-right.jpg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="publish-date row">
+								<span class="my-date col-md-2">
+									<i class="glyphicon glyphicon-calendar"></i>&nbsp;2019-09-11
+								</span>&nbsp;&nbsp;&nbsp;
+									<span class="my-see_num col-md-5"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;199</span>
+									<span class="my-mark col-md-1">java</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="panel panel-default content-cart">
+						<a href="blog.html">
+							<div class="panel-heading content-title">Spring相关知识点总结</div>
+							<div class="panel-body">
+								<div class="blog-content col-md-8 col-sm-12">
+									IOC（Inversion of Control/控制反转）相关内容
+									--------------------------------------------------------------------------------
+									概念：
+									控制：资源的获取方式；
+									主动式：要什么资源自己直接new。
+									被动式： 资源的获取不是我们自己创建，而是交给一个容器来创建和设置。
+									反转：对象的获取由当初的主动创建变为被动获取，对象获取方式的控制权交给spring；
+									作用：降低程序之间的耦合；
+									ioc容器或者说是单例池：
+									本质就是一个map（singletonObjects）；
+									容器启动时创建所有单实例对象；
+									我们可以直接从容器中获取这些对象；
+								</div>
+								<!--<a href="#" class="img-top col-md-4 col-sm-4">
+                                        <img class="col-md-12 col-sm-12" src="image/text-right.jpg">
+                                </a>-->
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<a href="#" class="thumbnail my-image">
+											<img th:src="@{/image/text-right.jpg}" src="../static/image/text-right.jpg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="publish-date row">
+								<span class="my-date col-md-2">
+									<i class="glyphicon glyphicon-calendar"></i>&nbsp;2019-09-11
+								</span>&nbsp;&nbsp;&nbsp;
+									<span class="my-see_num col-md-5"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;199</span>
+									<span class="my-mark col-md-1">java</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="panel panel-default content-cart">
+						<a href="blog.html">
+							<div class="panel-heading content-title">Spring相关知识点总结</div>
+							<div class="panel-body">
+								<div class="blog-content col-md-8 col-sm-12">
+									IOC（Inversion of Control/控制反转）相关内容
+									--------------------------------------------------------------------------------
+									概念：
+									控制：资源的获取方式；
+									主动式：要什么资源自己直接new。
+									被动式： 资源的获取不是我们自己创建，而是交给一个容器来创建和设置。
+									反转：对象的获取由当初的主动创建变为被动获取，对象获取方式的控制权交给spring；
+									作用：降低程序之间的耦合；
+									ioc容器或者说是单例池：
+									本质就是一个map（singletonObjects）；
+									容器启动时创建所有单实例对象；
+									我们可以直接从容器中获取这些对象；
+								</div>
+								<!--<a href="#" class="img-top col-md-4 col-sm-4">
+                                        <img class="col-md-12 col-sm-12" src="image/text-right.jpg">
+                                </a>-->
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<a href="#" class="thumbnail my-image">
+											<img th:src="@{/image/text-right.jpg}" src="../static/image/text-right.jpg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="publish-date row">
+								<span class="my-date col-md-2">
+									<i class="glyphicon glyphicon-calendar"></i>&nbsp;2019-09-11
+								</span>&nbsp;&nbsp;&nbsp;
+									<span class="my-see_num col-md-5"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;199</span>
+									<span class="my-mark col-md-1">java</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="panel panel-default content-cart">
+						<a href="blog.html">
+							<div class="panel-heading content-title">Spring相关知识点总结</div>
+							<div class="panel-body">
+								<div class="blog-content col-md-8 col-sm-12">
+									IOC（Inversion of Control/控制反转）相关内容
+									--------------------------------------------------------------------------------
+									概念：
+									控制：资源的获取方式；
+									主动式：要什么资源自己直接new。
+									被动式： 资源的获取不是我们自己创建，而是交给一个容器来创建和设置。
+									反转：对象的获取由当初的主动创建变为被动获取，对象获取方式的控制权交给spring；
+									作用：降低程序之间的耦合；
+									ioc容器或者说是单例池：
+									本质就是一个map（singletonObjects）；
+									容器启动时创建所有单实例对象；
+									我们可以直接从容器中获取这些对象；
+								</div>
+								<!--<a href="#" class="img-top col-md-4 col-sm-4">
+                                        <img class="col-md-12 col-sm-12" src="image/text-right.jpg">
+                                </a>-->
+								<div class="row">
+									<div class="col-xs-6 col-md-4">
+										<a href="#" class="thumbnail my-image">
+											<img th:src="@{/image/text-right.jpg}" src="../static/image/text-right.jpg" alt="">
+										</a>
+									</div>
+								</div>
+								<div class="publish-date row">
+								<span class="my-date col-md-2">
+									<i class="glyphicon glyphicon-calendar"></i>&nbsp;2019-09-11
+								</span>&nbsp;&nbsp;&nbsp;
+									<span class="my-see_num col-md-5"><i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;199</span>
+									<span class="my-mark col-md-1">java</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			<!--分页-->
+				<nav aria-label="Page navigation" class="page-limit">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<!--侧边-->
+			<div class="col-md-4 content-side visible-md visible-lg">
+				<div class="panel panel-info">
+					<div class="panel-heading">分类</div>
+					<div class="panel-body">
+						<div class="list-group category-list">
+							<a href="#" class="list-group-item">数据库 <span class="badge">14</span></a>
+							<a href="#" class="list-group-item">数据库 <span class="badge">14</span></a>
+							<a href="#" class="list-group-item">数据库 <span class="badge">14</span></a>
+							<a href="#" class="list-group-item">数据库 <span class="badge">14</span></a>
+							<a href="#" class="list-group-item">数据库 <span class="badge">14</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="panel-success recommend">
+					<div class="panel-heading">推荐阅读</div>
+					<div class="panel-body my-recommend-body">
+						<div class="list-group">
+						  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+						  <a href="#" class="list-group-item">Morbi leo risus</a>
+						  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+						  <a href="#" class="list-group-item">Vestibulum at eros</a>
+						  <a href="#" class="list-group-item">Vestibulum at eros</a>
+						  <a href="#" class="list-group-item">Vestibulum at eros</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row my-care-me">
+					<p>关注我</p>
+					<div class="col-md-6 my-care-div">
+						<img th:src="@{/image/personalCode.jpg}" src="../static/image/personalCode.jpg" alt="..." class="img-thumbnail">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- 页脚 -->
+		<footer th:replace="common_fragment::footer" class="row">
+			<div class="footer-top row">
+				<div class="footer-top-p">
+					<div class="footer-one col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">编程之道</p>
+						<p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+						<p class="col-sm-4 col-md-12">全民编程</p>
+					</div>
+					<div class="footer-two col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">编程之道</p>
+						<p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+						<p class="col-sm-4 col-md-12">全民编程</p>
+					</div>
+					<div class="footer-three col-md-3 col-sm-12">
+						<p class="col-sm-4 col-md-12">联系我</p>
+						<p class="col-sm-4 col-md-12">QQ：2320322504</p>
+						<p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
+					</div>
+					<div class="footer-four col-md-3 col-sm-12">
+						<img th:src="@{/image/personalCode.jpg}" src="../static/image/personalCode.jpg"  alt=""/>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+			</div>
+		</footer>
+		<script>
+			window.onload = function(){
+				var title = document.querySelector('.title');
+				let info = '该博客用来记录个人学习中掌握的一些知识点及开发中遇到的一些问题的解决方案';
+				let index = 0;
+				function writeInfo() {
+					console.log('执行定时器');
+					if (index < info.length) {
+						title.innerText = title.innerHTML + info[index];
+						index++;
+					} else {
+						console.log('清除定时器');
+						clearInterval(timeId);
+					}
+				}
+				var timeId = setInterval(writeInfo,100);
+			}
+		</script>
+	</body>
+</html>

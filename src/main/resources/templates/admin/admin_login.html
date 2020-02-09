@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>login</title>
+    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{/css/login.css}"/>
+    <script>
+        window.addEventListener("load",function () {
+            const error = document.querySelector('.errorInfo');
+            const errorInfo = error.innerHTML;
+            if (errorInfo.trim() !== ''){
+                error.style.display = 'block';
+                setTimeout(function () {
+                    error.style.display = 'none';
+                },3000);
+            }
+            let submit = document.querySelector('input[type="button"]');
+            const account = document.querySelector('input[type="text"]');
+            const password = document.querySelector('input[type="password"]');
+
+            function addBlurEvent(ele){
+                ele.addEventListener('blur',function(){
+                    if (ele.value.trim() === ''){
+                        ele.value = '';
+                        ele.setAttribute('placeholder','不能输入为空');
+                        ele.style.color='red';
+                    }
+                })
+            }
+            addBlurEvent(account);
+            addBlurEvent(password);
+            account.addEventListener('focus',function(){
+                account.style.color = 'black';
+            });
+            password.addEventListener('focus',function(){
+                password.style.color = 'black';
+            });
+            submit.addEventListener('click',function () {
+                let flag = true;
+                if (account.value.trim() === ''){
+                    flag = false;
+                }
+                if (password.value.trim() === '') {
+                    flag = false;
+                }
+                if (flag) {
+                    document.querySelector('form').submit();
+                } else {
+                    account.setAttribute('placeholder','不能输入为空');
+                    account.style.color='red';
+                    password.setAttribute('placeholder','不能输入为空');
+                    password.style.color = 'red';
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="pageTop"></div>
+<div class="form">
+    <div class="lone"></div>
+    <div class="title">
+        <span>G</span>
+    </div>
+    <form th:action="@{/admin/login}" action="login" method="post">
+        <input type="text" name="userName" placeholder="请输入用户名"><br />
+        <input type="password" name="password" placeholder="请输入密码"><br />
+        <input type="button" value="登录">
+        <div class="errorInfo">[[(${errorMsg})]]</div>
+    </form>
+    <div class="personal" style="text-align: center;line-height: 2em;">
+        <span>GWG Blogs 后台管理系统&nbsp;&nbsp;&nbsp;&copy;GWG</span>
+    </div>
+</div>
+<div class="pageFloor"></div>
+<div class="logo"><span>GWG &nbsp;&nbsp;&nbsp;BLOGS</span></div>
+</body>
+</html>

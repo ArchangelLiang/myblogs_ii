@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>分类管理</title>
+    <link rel="stylesheet" href="../../static/css/normal.css" th:href="@{/css/normal.css}"/>
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" href="../../static/css/admin.css" th:href="@{/css/admin.css}"/>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}"/>
+    <script src="../../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script src="../../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+    <script>
+        window.addEventListener('load',function(){
+            let nav_blocks = document.querySelector('.my-nav-bottom-block').querySelectorAll('div');
+            for (let i = 0; i < nav_blocks.length; i++) {
+                nav_blocks[i].addEventListener('click',function(){
+                    let brothers = this.parentNode.children;
+                    for (let j = 0;j < brothers.length; j++) {
+                        brothers[j].removeAttribute("class");
+                    }
+                    this.setAttribute("class","my-nav-bottom-block-active");
+                });
+            }
+            let deleteTypes = document.getElementsByClassName("deleteType");
+            for (let i = 0; i < deleteTypes.length; i++) {
+                deleteTypes[i].addEventListener('click',function(e){
+                    let deleteNode = this.parentNode.previousElementSibling;
+                    let b = confirm("确定要删除 [" + deleteNode.innerHTML + "]类别吗？");
+                    if (!b) {
+                        e.preventDefault();
+                    }
+                });
+            }
+            let disabled = document.querySelector('.my-page-limit').querySelectorAll('.disabled');
+            for (let i = 0; i < disabled.length; i++) {
+                disabled[i].querySelector('a').addEventListener('click',function(e){
+                    e.preventDefault();
+                    return false;
+                });
+            }
+        });
+    </script>
+</head>
+<body class="container-fluid">
+<!--导航模块-->
+<nav th:replace="admin/admin_fragment::admin_nav('c')" class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">博客<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="categories.html">分类</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img class="img-circle my-header" style="width: 23px; "
+                                                  src="../../static/image/header.jpg " alt="">decade <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="panel panel-default">
+    <div class="panel-body my-nav-bottom-body">
+        <div class="my-nav-bottom-block" style="float: right;margin-right: 3%;height: 100%">
+            <div class="" style="border-right: none;">新增</div>
+            <div class="my-nav-bottom-block-active">列表</div>
+        </div>
+    </div>
+</div>
+<!--分类列表-->
+<div class="panel panel-default my-margin-control" style="background-color: white;margin-bottom: 3em!important;">
+    <div class="panel-body my-table-body">
+        <table class="table text-center" style="border-bottom: 1px solid #CCCCCC;margin-bottom: 0 !important;">
+            <thead>
+            <tr>
+                <th></th>
+                <th>分类名称</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="type:${pageResult.result}">
+                <td th:text="${typeStat.count}">1</td>
+                <td th:text="${type.name}">
+                    java
+                </td>
+                <td>
+                    <a th:href="@{/admin/toType(id=${type.id})}" class="btn btn-info my-btn-edit">编辑</a>
+                    <a th:href="@{/admin/deleteType(id=${type.id})}" class="btn btn-danger my-btn-delete deleteType">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="row" style="position: relative;margin-left: 0 !important;margin-right: 0 !important;">
+            <!--分页-->
+            <nav aria-label="Page navigation" style="float: left">
+                <ul class="pagination my-page-limit">
+                    <li th:class="${pageResult.isFirstPage()}?'disabled':''">
+                        <a href="#" th:href="@{/admin/listType(pageNum=${pageResult.currentPage - 1})}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:each="pagenum:${pageResult.pageNums}" th:class="${pageResult.currentPage == pagenum}?'active':''" ><a th:text="${pagenum}" th:href="@{/admin/listType(pageNum=${pagenum},pageSize=5)}" href="#">1</a></li>
+                    <li th:class="${pageResult.isLastPage()}?'disabled':''">
+                        <a href="#" th:href="@{/admin/listType(pageNum=${pageResult.currentPage + 1})}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--新增-->
+            <a href="#" th:href="@{/admin/toType}" class="btn btn-info" style="position: absolute;right: 2em;top: 50%;transform: translateY(-50%)">新增
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 页脚 -->
+<footer class="row" th:replace="admin/admin_fragment::footer">
+    <div class="footer-top row ">
+        <div class="footer-top-p ">
+            <div class="footer-one col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">联系我</p>
+                <p class="col-sm-4 col-md-12 ">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12 ">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12 ">
+                <img src="../../static/image/personalCode.jpg" th:src="@{/image/personalCode.jpg}" alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom ">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>

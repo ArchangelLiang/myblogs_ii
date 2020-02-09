@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="../../static/css/normal.css" th:href="@{/css/normal.css}"/>
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}"/>
+    <script src="../../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script src="../../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body class="container-fluid">
+<!--导航模块-->
+<nav th:replace="admin/admin_fragment::admin_nav('')" class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">博客<span class="sr-only">(current)</span></a></li>
+                <li><a href="categories.html">分类</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img class="img-circle my-header" style="width: 23px; "
+                                                  src="../../static/image/header.jpg " alt="">decade <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--后台管理欢迎页-->
+<div class="row" style="margin-right: 0!important;margin-left: 0!important;">
+    <div style="padding: 8em;">
+        <p style="padding: 5em;background-color: rgba(0,191,255,.3);font-size: 30px;">
+            欢迎登录GwgBlog管理后台
+        </p>
+    </div>
+</div>
+<!--列表-->
+<!-- 页脚 -->
+<footer class="row" th:replace="admin/admin_fragment::footer">
+    <div class="footer-top row ">
+        <div class="footer-top-p ">
+            <div class="footer-one col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">联系我</p>
+                <p class="col-sm-4 col-md-12 ">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12 ">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12 ">
+                <img src="../../static/image/personalCode.jpg" th:src="@{/image/personalCode.jpg}"/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom ">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>

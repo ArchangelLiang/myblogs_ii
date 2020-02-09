@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>博客详情</title>
+    <link rel="stylesheet" href="../static/css/normal.css" th:href="@{/css/normal.css}">
+    <link rel="stylesheet" href="../static/css/blog.css" th:href="@{/css/blog.css}" />
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}"/>
+    <script src="../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/prism.css" th:href="@{/css/prism.css}">
+    <link rel="stylesheet" href="../static/fonts/my_icon/iconfont.css" th:href="@{/fonts/my_icon/iconfont.css}">
+	<link rel="stylesheet" href="../static/lib/tocbot/dist/tocbot.css" th:href="@{/lib/tocbot/dist/tocbot.css}">
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../static/js/prism.js" th:src="@{/js/prism.js}"></script>
+	<script src="../static/lib/tocbot/dist/tocbot.min.js" th:src="@{/lib/tocbot/dist/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <style>
+        .typo code {
+            color: #1abc9c;
+        }
+
+        .typo pre {
+            white-space: pre-wrap;
+        }
+
+        .typo i.serif {
+            text-transform: lowercase;
+            color: #1abc9c;
+        }
+
+        .typo :-moz-any(h1, h2, h3, h4, h5, h5) i.serif {
+            text-transform: capitalize;
+        }
+
+        .typo i.serif:hover {
+            color: inherit;
+        }
+
+        #wrapper {
+            padding: 5% 10%;
+            position: relative;
+        }
+
+        .typo #tagline {
+            color: #999;
+            font-size: 1em;
+            margin: -2em 0 2em;
+            padding-bottom: 2em;
+            border-bottom: 3px double #eee;
+        }
+
+        .typo #fork {
+            position: fixed;
+            top: 0;
+            right: 0;
+            _position: absolute;
+        }
+
+        .typo #table {
+            margin-bottom: 2em;
+            color: #888;
+        }
+
+        .typo #github {
+            position: absolute;
+            top: 1em;
+        }
+
+        .typo #github iframe {
+            display: inline;
+            margin-right: 1em;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .typo table {
+                word-break: break-all;
+                word-wrap: break-word;
+                font-size: 12px;
+            }
+
+            .typo table th, .typo table td, .typo-table th, .typo-table td .typo table caption {
+                padding: 0.5em;
+            }
+
+            .typo #fork {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="container-fluid">
+<!--导航模块
+<nav class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">GwgBlog</a>
+        </div>
+
+        &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
+                <li><a href="categories.html">分类</a></li>
+                <li><a href="total.html">归档</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="输入您感兴趣的内容">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
+            </ul>
+        </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+    </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+</nav>-->
+<!--引入导航模块-->
+<nav th:replace="~{common_fragment::nav('')}"></nav>
+<!--正文-->
+<div class="row primary">
+    <div class="col-sm-12 col-md-9 my-blog">
+        <div class="col-md-12 col-sm-12 my-blog-title">
+            <strong>GwgBlog</strong>&nbsp;
+            <i class="glyphicon glyphicon-calendar"></i>&nbsp;&nbsp;<span>2020-1-12</span>
+            &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<span>199</span>
+        </div>
+        <div class="thumbnail">
+            <div class="my-blog-img-control">
+                <img class="img-rounded my-blog-img" src="../static/image/code.jpg" alt="...">
+            </div>
+            <div class="caption">
+                <div id="wrapper" class="my-blog-text typo typo-selection">
+                    <!--h3><span class="label label-info my-blog-mark">原创</span></h3>
+                    <h1 class="text-center my-blog-text-title">论阅读源码的重要性</h1>-->
+                    <h1 id="one">中文网页重设与排版：<i class="serif">Typo.css</i></h1><br/>
+
+                    <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
+                    <ol id="table">
+                        <li><a href="#section1">关于 <i class="serif">Typo.css</i></a></li>
+                        <li><a href="#section2">排版实例</a>
+                            <ul>
+                                <li><a href="#section2-1">例1：论语学而篇第一</a></li>
+                                <li><a href="#section2-2">例2：英文排版</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#section3">附录</a>
+                            <ul>
+                                <li><a href="#appendix1"><i class="serif">Typo.css</i> 排版偏重点</a></li>
+                                <li><a href="#appendix2">开源许可</a></li>
+                            </ul>
+                        </li>
+                    </ol>
+
+					<div class="js-toc-content">
+						<h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
+
+						<p><i class="serif">Typo.css</i> 的目的是，在一致化浏览器排版效果的同时，构建最适合中文阅读的网页排版。</p>
+						<h4>现状和如何去做：</h4>
+
+						<p class="typo-first">排版是一个麻烦的问题 <sup><a href="#appendix1"># 附录一</a></sup>，需要精心设计，而这个设计却是常被视觉设计师所忽略的。前端工程师更常看到这样的问题，但不便变更。因为在多个
+							OS 中的不同浏览器渲染不同，改动需要多的时间做回归测试，所以改变变得更困难。而像我们一般使用的
+							Yahoo、Eric Meyer 和 Alice base.css 中采用的 Reset 都没有很好地考虑中文排版。<i class="serif">Typo.css</i>
+							要做的就是解决中文排版的问题。</p>
+
+						<p><strong><i class="serif">Typo.css</i> 测试于如下平台：</strong></p>
+						<table summary="Typo.css 的测试平台列表">
+							<thead>
+							<tr>
+								<th>OS/浏览器</th>
+								<th>Firefox</th>
+								<th>Chrome</th>
+								<th>Safari</th>
+								<th>Opera</th>
+								<th>IE9</th>
+								<th>IE8</th>
+								<th>IE7</th>
+								<th>IE6</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>OS X</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>Win 7</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>Win XP</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>-</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>✔</td>
+							</tr>
+							<tr>
+								<td>Ubuntu</td>
+								<td>✔</td>
+								<td>✔</td>
+								<td>-</td>
+								<td>✔</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							</tbody>
+						</table>
+
+						<h3 id="two">中文排版的重点和难点</h3>
+
+						<p>在中文排版中，HTML4 的很多标准在语义在都有照顾到。但从视觉效果上，却很难利用单独的 CSS 来实现，像<abbr title="在文字下多加一个点">着重号</abbr>（例：这里<em
+								class="typo-em">强调一下</em>）。在 HTML4 中，专名号标签（<code>&lt;u&gt;</code>）已经被放弃，而
+							HTML5 被<a href="http://html5doctor.com/u-element/">重新提起</a>。<i class="serif">Typo.css</i>
+							也根据实际情况提供相应的方案。我们重要要注意的两点是：</p>
+						<ol>
+							<li>语义：语义对应的用法和样式是否与中文排版一致</li>
+							<li>表现：在各浏览器中的字体、大小和缩放是否如排版预期</li>
+						</ol>
+						<p>对于这些，<i class="serif">Typo.css</i> 排版项目的中文偏重注意点，都添加在附录中，详见：</p>
+						<blockquote>
+							<b>附录一</b>：<a href="#appendix1"><i class="serif">Typo.css</i> 排版偏重点</a>
+						</blockquote>
+
+						<p>目前已有像百姓网等全面使用 <i class="serif">Typo.css</i> 的项目，测试平台的覆盖，特别是在<abbr title="手机、平板电脑等移动平台">移动端</abbr>上还没有覆盖完主流平台，希望有能力的同学能加入测试行列，或者加入到
+							<i class="serif">Typo.css</i>
+							的开发。加入方法：<a href="https://github.com/sofish/Typo.css">参与 <i class="serif">Typo.css</i> 开发</a>。如有批评、建议和意见，也随时欢迎给在
+							Github 直接提 <a
+									href="https://github.com/sofish/Typo.css/issues">issues</a>，或给<abbr
+									title="Sofish Lin, author of Typo.css"
+									role="author">我</abbr>发<a
+									href="mailto:sofish@icloud.com">邮件</a>。</p>
+					</div>
+                </div>
+                <div class="my-give-money">
+                    <button type="button" id="money-btn" class="center-block btn btn-danger btn-lg" data-toggle="modal"
+                            data-target="#myModal">打赏
+                    </button>
+                </div>
+            </div>
+            <div class="panel panel-success my-blog-explain">
+                <!-- Default panel contents -->
+                <div class="panel-heading">博客说明</div>
+                <div class="panel-body">
+                    <p>以上内容均为个人理解，如有错误欢迎指正</p>
+                </div>
+                <ul style="line-height: 30px;">
+                    <li>作者：Archangel</li>
+                    <li>发表时间：<span>2020-01-20</span></li>
+                    <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
+                    <li>联系作者：微信手机同号：15821007571</li>
+                </ul>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    留言
+                </div>
+                <div id="my-leave-msg-body" class="panel-body">
+                    <!-- 此处用来留言 -->
+                    <textarea class="form-control my-comment" placeholder="在此输入评论信息" style="resize: none;"
+                              rows="3"></textarea>
+                    <form class="form-inline" style="margin-top: 20px;margin-bottom: 20px;">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="请输入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="请输入您的邮箱">
+                        </div>
+                        <button type="button" class="btn btn-info">评论</button>
+                    </form>
+                    <!-- 历史留言列表 -->
+                    <ul class="my-leave-msg">
+                        <li>
+                            <p><span>小明</span>: &nbsp;<span style="color: #5E5E5E;">写的不孬，值得推荐；</span></p>
+                        </li>
+                        <li>
+                            <p><span>小王</span>: &nbsp;<span style="color: #5E5E5E;">写的不孬，值得推荐；</span></p>
+                        </li>
+                        <li>
+                            <p><span>小花</span>: &nbsp;<span style="color: #5E5E5E;">写的不孬，值得推荐；</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">谢谢打赏</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row text-center">
+                    <div class="clearfix" style="display: inline-block;">
+                        <div class="" style="width: 200px;float: left;margin-right: 10px;">
+                            <img src="../static/image/my-zfb.png" style="width: 100%;" alt="..." class="img-thumbnail">
+                            <h4 class="text-center">支付宝</h4>
+                        </div>
+                        <div class="" style="width: 200px;float: left;margin-left: 10px;">
+                            <img src="../static/image/my-wx.png" style="width: 100%;" alt="..." class="img-thumbnail">
+                            <h4 class="text-center">微信</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--固定定位的导航-->
+<ul class="list-group my-fixed-list">
+    <li class="list-group-item my-catalogue-btn">目录</li>
+	<div class="my-categories-hidden">
+		<ol class="js-toc" style="width: 250px;">
+
+		</ol>
+	</div>
+    <li class="list-group-item my-leave-msg-btn">留言</li>
+    <li class="list-group-item iconfont icon-wechat text-center my-wechat-btn"></li>
+	<div id="qrcode" class="my-wechat-hidden" style="padding: 7px;">
+<!--		<img src="./image/personalCode.jpg" class="img-rounded" style="border: 8px solid white;width: 120px;">-->
+	</div>
+    <li class="list-group-item glyphicon glyphicon-menu-up text-center my-moveTop-btn" style="display: none;"></li>
+</ul>
+<!-- 页脚 -->
+<footer th:replace="common_fragment::footer" class="row">
+    <div class="footer-top row">
+        <div class="footer-top-p">
+            <div class="footer-one col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">互联网时代</p>
+                <p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">编程之道</p>
+                <p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">联系我</p>
+                <p class="col-sm-4 col-md-12">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12">
+                <img src="../static/image/personalCode.jpg"/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+<script>
+    window.onload = function () {
+        let flag = true;
+        let timeNum;
+
+        function scrollAnimate(num) {
+            let de = document.documentElement;
+            if (de.scrollTop === num) {
+                flag = true;
+                console.log('清除定时器，首次传入的参数='+num+',请除时的top=' + de.scrollTop);
+                clearInterval(timeNum);
+                return;
+            }
+            if (de.scrollTop > num) {
+                if (de.scrollTop - num < 100) {
+                    if (de.scrollTop - num < 50) {
+                        de.scrollTop -= 1;
+                    }
+                    de.scrollTop -= 20;
+                }
+                de.scrollTop -= 100;
+            } else {
+                if (de.scrollTop + 100 > num) {
+                    if (de.scrollTop + 50 > num) {
+                        if (de.scrollTop + 20 > num) {
+                            de.scrollTop += 1;
+                        } else {
+                            de.scrollTop += 20;
+                        }
+                    } else {
+                        de.scrollTop += 50;
+                    }
+                } else {
+                    de.scrollTop += 100;
+                }
+            }
+        }
+
+        let move_top = document.querySelector('.my-moveTop-btn');
+        document.addEventListener('scroll',function(){
+            console.log(document.documentElement.scrollTop);
+            if (document.documentElement.scrollTop > 700) {
+                move_top.style.display='block';
+            } else {
+                move_top.style.display='none';
+            }
+        });
+        move_top.addEventListener('click', function () {
+            if (flag === true) {
+                flag = false;
+                timeNum = setInterval(function () {
+                    scrollAnimate(0);
+                }, 1);
+            }
+        });
+        let leave_btn = document.querySelector(".my-leave-msg-btn");
+        leave_btn.addEventListener('click', function () {
+            if (flag === true) {
+                flag = false;
+                let n = document.querySelector('.primary').offsetHeight - document.getElementById('my-leave-msg-body').offsetHeight-200;
+                timeNum = setInterval(function () {
+                    console.log('留言动画参数首次为：' + n);
+                    scrollAnimate(n);
+                }, 1);
+            }
+        });
+        let catalogue_btn = document.querySelector('.my-catalogue-btn');
+        let catalogue = document.querySelector('.my-categories-hidden');
+        let wechat= document.querySelector('.my-wechat-btn');
+        let wechat_hidden = document.querySelector('.my-wechat-hidden');
+        document.body.onclick=function(){
+            catalogue.style.display = 'none';
+            wechat_hidden.style.display = 'none';
+        };
+        catalogue_btn.addEventListener('click',function(e){
+            catalogue.style.display === 'block'?catalogue.style.display = 'none':catalogue.style.display = 'block';
+            wechat_hidden.style.display = 'none';
+            e.stopPropagation();
+        });
+        wechat.addEventListener('click',function(e){
+            wechat_hidden.style.display === 'block'?wechat_hidden.style.display = 'none':wechat_hidden.style.display = 'block';
+            catalogue.style.display = 'none';
+            e.stopPropagation();
+        });
+        //引入目录生成插件
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.js-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.js-toc-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+        //引入二维码生成插件
+        var qrcode = new QRCode("qrcode", {
+            text: "http://jindo.dev.naver.com/collie",
+            width: 120,
+            height: 120,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    }
+</script>
+</body>
+</html>

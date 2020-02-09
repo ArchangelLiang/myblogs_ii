@@ -1,0 +1,36 @@
+.my-search {
+	margin-left: 5em;
+}
+.my-search-inp {
+	margin-right: 3em !important;
+}
+thead th {
+	text-align: center;
+}
+tbody td {
+	height: 30px!important;
+	line-height: 30px!important;
+}
+.my-btn-edit,
+.my-btn-delete {
+	background-color: transparent !important;
+}
+.my-btn-edit {
+	color: #269abc !important;
+	margin-right: 5px!important;
+}
+.my-btn-delete {
+	color: #ac2925 !important;
+	margin-left: 5px!important;
+}
+.my-table-body {
+	padding-bottom: 0 !important;
+}
+.my-admin-manage-search {
+	margin-bottom: 1em!important;
+}
+.my-admin-manage-list {
+	background-color: white;
+	border-top-color: deepskyblue!important;
+	border-top-width: 2px!important;
+}
