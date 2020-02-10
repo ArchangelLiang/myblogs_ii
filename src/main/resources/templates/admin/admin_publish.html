@@ -44,6 +44,11 @@
                     flagChange.innerHTML = this.innerHTML;
                 });
 
+                let backPageBtn = document.getElementById('backPageBtn');
+                backPageBtn.addEventListener('click',function(){
+                    window.history.back();
+                });
+
                 let nav_blocks = document.querySelector('.my-nav-bottom-block').querySelectorAll('div');
                 for (let i = 0; i < nav_blocks.length; i++) {
                     nav_blocks[i].addEventListener('click', function () {
@@ -55,7 +60,8 @@
                     });
                 }
                 $("button[name='publish']").click(function(){
-                    let flag,title,content,typeId,recommend,shareStatement,appreciation,commentAble,firstPicture,published;
+                    let id,flag,title,content,typeId,recommend,shareStatement,appreciation,commentAble,firstPicture,published;
+                    id = $("input[name='id']").val();
                     flag = flagChange.innerHTML;
                     title = $("input[name='title']").val();
                     content = $("textarea[name='content']").val();
@@ -73,7 +79,7 @@
                     $.ajax({
                         type: 'post',
                         url: 'http://localhost:9990/admin/saveBlog',
-                        data: {flag: flag,title: title,content: content,'type.id': typeId,recommend: recommend,shareStatement: shareStatement,appreciation: appreciation,commentAble: commentAble,firstPicture: firstPicture,published: published},
+                        data: {id: id,flag: flag,title: title,content: content,'type.id': typeId,recommend: recommend,shareStatement: shareStatement,appreciation: appreciation,commentAble: commentAble,firstPicture: firstPicture,published: published},
                         success: function(data){
                             console.log('收到服务器返回的数据：' + data);
                             if (data.status === '成功'){
@@ -136,17 +142,18 @@
 <!--博客发布-->
 <!--博客标题-->
 <div class="my-publish-title row my-margin-control">
+    <input type="hidden" name="id" th:value="${updateBlog == null} ? '':${updateBlog.id}">
     <div class="input-group col-md-12" style="padding-left: 10%;padding-right: 10%;">
         <div class="input-group input-group-lg">
             <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="flagChange">原创</span> <span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" th:text="${updateBlog == null} ? _:${updateBlog.flag}" aria-expanded="false"><span id="flagChange">原创</span> <span class="caret"></span></button>
                 <ul class="dropdown-menu" style="min-width: 0 !important;z-index: 99999;">
                     <li><a class="flag" href="#">原创</a></li>
                     <li><a class="flag" href="#">转载</a></li>
                     <li><a class="flag" href="#">翻译</a></li>
                 </ul>
             </div><!-- /btn-group -->
-            <input type="text" name="title" class="form-control" placeholder="输入标题">
+            <input type="text" name="title" th:value="${updateBlog == null} ? '':${updateBlog.title}" class="form-control" placeholder="输入标题">
         </div>
     </div><!-- /input-group -->
 </div><!-- /.col-lg-6 -->
@@ -154,7 +161,7 @@
 <div class="row my-margin-control" style="margin-bottom: 3em!important;">
     <div style="padding-left: 10%;padding-right: 10%;">
         <div id="md-content" style="z-index: 9999!important;">
-            <textarea class="form-control col-md-12" rows="8" name="content" style="display: none;"></textarea>
+            <textarea class="form-control col-md-12" rows="8" th:text="${updateBlog == null} ? '':${updateBlog.content}" th:value="${updateBlog == null} ? '':${updateBlog.content}" name="content" style="display: none;"></textarea>
         </div>
     </div>
 </div>
@@ -166,7 +173,7 @@
                 <div class="input-group input-group">
                     <span class="input-group-addon" style="background-color: white!important;">分类</span>
                     <select class="form-control">
-                        <option name="typeId" th:each="type:${typeList}" value="9" th:value="${type.id}" th:text="${type.name}">javaSE</option>
+                        <option name="typeId" th:each="type:${typeList}" value="9" th:selected="${updateBlog == null} ? '':${updateBlog.type.id == type.id}" th:value="${type.id}" th:text="${type.name}">javaSE</option>
                         <!--<option>框架技术</option>
                         <option>HTML</option>
                         <option>CSS</option>
@@ -188,29 +195,29 @@
         <!--checkbox-->
         <div class="row" style="padding: 1.5em 2em;">
             <label class="checkbox-inline" >
-                <input type="checkbox" name="recommend" value="option1"> 推荐
+                <input type="checkbox" name="recommend" th:checked="${updateBlog == null} ? false:${updateBlog.recommend == 1}" value="option1"> 推荐
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" name="shareStatement" value="option1"> 转载声明
+                <input type="checkbox" name="shareStatement" th:checked="${updateBlog == null} ? false:${updateBlog.shareStatement == 1}" value="option1"> 转载声明
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" name="appreciation" value="option1"> 打开赞赏
+                <input type="checkbox" name="appreciation" th:checked="${updateBlog == null} ? false:${updateBlog.appreciation == 1}" value="option1"> 打开赞赏
             </label>
             <label class="checkbox-inline">
-                <input type="checkbox" name="commentAble" value="option1">打开评论
+                <input type="checkbox" name="commentAble" th:checked="${updateBlog == null} ? false:${updateBlog.commentAble == 1}" value="option1">打开评论
             </label>
         </div>
         <!--首图引用链接-->
         <div class="row" style="padding: 0 1em;margin-bottom: 2em;">
             <div class="input-group">
                 <span class="input-group-addon">链接</span>
-                <input type="text" name="firstPicture" class="form-control" placeholder="首图链接">
+                <input type="text" name="firstPicture" th:value="${updateBlog == null} ? '':${updateBlog.firstPicture}" class="form-control" placeholder="首图链接">
             </div>
         </div>
         <!--操作按钮-->
         <div class="row" style="padding: 0 1em;">
             <div style="float: right;">
-                <button class="btn btn-default">返回</button>
+                <button id="backPageBtn" class="btn btn-default">返回</button>
                 <button name="publish" class="btn btn-success" id="my" data-published="0" th:attr="published=0">保存</button>
                 <button name="publish" class="btn btn-info" th:attr="published=1">发布</button>
             </div>

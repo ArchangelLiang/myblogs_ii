@@ -4,6 +4,7 @@ import com.gwg.mapper.UserMapper;
 import com.gwg.pojo.User;
 import com.gwg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
@@ -13,6 +14,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Cacheable(cacheNames = "user",key = "#userName")
     @Override
     public User checkUser(String userName, String password) {
         if (userName == null || password == null || userName.trim().equals("") || password.trim().equals("")) {

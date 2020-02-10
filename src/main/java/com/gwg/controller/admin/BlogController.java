@@ -1,5 +1,6 @@
 package com.gwg.controller.admin;
 
+import com.gwg.exceptions.BadRequestException;
 import com.gwg.pojo.Blog;
 import com.gwg.pojo.Type;
 import com.gwg.pojo.User;
@@ -26,6 +27,21 @@ public class BlogController {
     @Autowired
     private TypeService typeService;
 
+    @PostMapping("deleteBlog")
+    public String deleteBlog(Long id,ModelMap model){
+        if (id == null) {
+            throw new BadRequestException("进行删除操作时id不可以为空");
+        }
+        boolean b = this.blogService.deleteBlogById(id);
+        if (!b) {
+            throw new RuntimeException("操作异常");
+        } else {
+            PageResult<Blog> pageResult = this.blogService.listBlog(null, null, null, 1, 5);
+            model.addAttribute("blogPageResult", pageResult);
+            return "admin/admin_blog :: blogList";
+        }
+    }
+
     @ResponseBody
     @PostMapping("saveBlog")
     public RequestResult saveBlogOfJson(Blog blog, HttpSession session) {
@@ -35,10 +51,9 @@ public class BlogController {
                 blog.getFirstPicture() == null || blog.getFirstPicture().trim().equals("") || blog.getPublished() == null) {
             return new RequestResult("失败","");
         } else {
-            blog.setAppreciation(blog.getAppreciation() == null ? 0 : 1);
-            blog.setCommentAble(blog.getCommentAble() == null ? 0 : 1);
-            blog.setRecommend(blog.getRecommend() == null ? 0 : 1);
-            blog.setShareStatement(blog.getShareStatement() == null ? 0 : 1);
+            if (blog.getId() != null) {
+                this.blogService.deleteBlogById(blog.getId());
+            }
             Date date = new Date();
             blog.setCreateTime(date);
             blog.setUpdateTime(date);
@@ -49,9 +64,13 @@ public class BlogController {
     }
 
     @GetMapping("toPublish")
-    public String toPublish(ModelMap model) {
+    public String toPublish(@RequestParam(value = "id",required = false) Long id,ModelMap model) {
         List<Type> types = this.typeService.listTypeAll();
         model.addAttribute("typeList", types);
+        if (id != null) {
+            Blog blog = this.blogService.getBlogById(id);
+            model.addAttribute("updateBlog",blog);
+        }
         return "admin/admin_publish";
     }
 

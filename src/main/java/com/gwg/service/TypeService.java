@@ -13,7 +13,7 @@ public interface TypeService {
 
     PageResult<Type> listType(int pageNum,int pageSize);
 
-    boolean updateType(Type type);
+    Type updateType(Type type);
 
     void deleteType(int id);
 

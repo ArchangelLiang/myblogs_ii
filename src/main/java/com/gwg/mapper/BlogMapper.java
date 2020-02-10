@@ -7,14 +7,15 @@ import org.apache.ibatis.mapping.FetchType;
 import org.apache.ibatis.type.JdbcType;
 
 import java.util.List;
-import java.util.Map;
 
 public interface BlogMapper {
 
-    @Select("select * form blog where id = #{id}")
+    @ResultMap("blogMap")
+    @Select("select * from blog where id = #{id}")
     Blog getBlogById(@Param("id") Long id);
 
     @Results(
+            id = "blogMap",
            value = {
                    @Result(id = true,column = "id",property = "id"),
                    @Result(column = "create_time",property = "createTime",jdbcType = JdbcType.TIMESTAMP),
@@ -43,7 +44,7 @@ public interface BlogMapper {
                 SELECT("count(id)");
                 FROM("blog");
                 if (title != null && !title.trim().equals("")) {
-                    WHERE("title like %#{title}%");
+                    WHERE("title like #{title}");
                 }
                 if (typeId != null) {
                     WHERE("type = #{typeId}");
@@ -67,20 +68,20 @@ public interface BlogMapper {
             }}.toString();
         }
 
-        public String getSearchSQL(Map<String, Object> para) {
+        public String getSearchSQL(@Param("title") String title, @Param("typeId") Integer typeId,@Param("recommend") Integer recommend,@Param("start") int start, @Param("size") int size) {
             return new SQL() {{
                 SELECT("*");
                 FROM("blog");
-                if (para.get("title") != null && !String.valueOf(para.get("title")).equals("") ) {
-                    WHERE("title like %" + para.get("title") + "%");
+                if (title != null && !title.equals("")) {
+                    WHERE("title like #{title}");
                 }
-                if (para.get("typeId") != null) {
-                    WHERE("type = " + para.get("typeId"));
+                if (typeId != null ) {
+                    WHERE("type = #{typeId}");
                 }
-                if (para.get("recommend") !=null && !String.valueOf(para.get("recommend")).trim().equals("")){
+                if (recommend !=null){
                     WHERE("recommend = #{recommend}");
                 }
-                LIMIT(String.valueOf(para.get("start")) + " , " + para.get("size"));
+                LIMIT("#{start} , #{size}");
             }}.toString();
         }
     }

@@ -6,11 +6,16 @@ import com.gwg.service.TypeService;
 import com.gwg.util.PageResult;
 import com.gwg.util.PageResultBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@CacheConfig(cacheNames = "type")
 @Service
 public class TypeServiceImpl implements TypeService {
 
@@ -29,6 +34,7 @@ public class TypeServiceImpl implements TypeService {
         return this.typeMapper.saveType(typeName);
     }
 
+    @Cacheable(key = "#id")
     @Override
     public Type getType(int id) {
         return this.typeMapper.getTypeById(id);
@@ -42,15 +48,18 @@ public class TypeServiceImpl implements TypeService {
         return PageResultBuilder.builder(typeList,pageNum,pageSize,countType);
     }
 
+    @CachePut(key = "#type.id")
     @Transactional
     @Override
-    public boolean updateType(Type type) {
+    public Type updateType(Type type) {
         if (type == null || type.getId() == null || type.getName() == null){
-            return false;
+            return null;
         }
-        return this.typeMapper.updateType(type);
+        this.typeMapper.updateType(type);
+        return type;
     }
 
+    @CacheEvict(key = "#id")
     @Transactional
     @Override
     public void deleteType(int id) {

@@ -13,6 +13,6 @@ public interface BlogService {
 
     boolean deleteBlogById(Long id);
 
-    boolean updateBlog(Blog blog);
+    Blog updateBlog(Blog blog);
 
 }

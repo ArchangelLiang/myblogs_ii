@@ -3,17 +3,14 @@
 	padding-right: 8em;
 }
 footer {
-	position: relative;
 	width: 100%;
-	margin: 0 !important;
+	margin: 5em 0 0 !important;
 	background-color: #2a2730;
 	/* height: 250px; */
 	color: #99979c;
 	padding-left: 70px;
 	padding-right: 70px;
 	text-align: center;
-	border-top-left-radius: 13px;
-	border-top-right-radius: 13px;
 	border-radius: 0 !important;
 }
 .footer-top-p {
