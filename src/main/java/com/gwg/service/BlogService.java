@@ -2,6 +2,9 @@ package com.gwg.service;
 
 import com.gwg.pojo.Blog;
 import com.gwg.util.PageResult;
+import com.gwg.util.RecommendBlog;
+
+import java.util.List;
 
 public interface BlogService {
 
@@ -14,5 +17,7 @@ public interface BlogService {
     boolean deleteBlogById(Long id);
 
     Blog updateBlog(Blog blog);
+
+    List<RecommendBlog> recommendBlogTitle();
 
 }

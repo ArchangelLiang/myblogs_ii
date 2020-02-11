@@ -10,9 +10,19 @@ public interface TypeMapper {
     @Insert("insert into type (name) values(#{typeName})")
     boolean saveType(@Param("typeName") String typeName);
 
+    @ResultMap("typeMap")
     @Select("select * from type where id = #{id}")
-    Type getTypeById(@Param("id")int id);
+    Type getTypeById(@Param("id") int id);
 
+    @Results(
+            id = "typeMap",
+            value = {@Result(property = "id", column = "id"),
+                    @Result(
+                            property = "blogList",column = "id",
+                            many = @Many(select = "com.gwg.mapper.BlogMapper.getBlogByTypeId")
+                    )
+            }
+    )
     @Select("select * from type")
     List<Type> getAll();
 
@@ -23,7 +33,7 @@ public interface TypeMapper {
     void deleteType(@Param("id") int id);
 
     @Select("select * from type limit #{start},#{size}")
-    List<Type> getAllOfPage(@Param("start") int start,@Param("size") int size);
+    List<Type> getAllOfPage(@Param("start") int start, @Param("size") int size);
 
     @Select("select count(id) from type")
     int countType();

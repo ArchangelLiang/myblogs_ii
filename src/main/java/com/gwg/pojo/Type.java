@@ -8,7 +8,7 @@ public class Type implements Serializable {
     private Integer id;
     private String name;
 
-    private List<Blog> blog_list;
+    private List<Blog> blogList;
 
     public Type() {
     }
@@ -18,12 +18,12 @@ public class Type implements Serializable {
         this.name = name;
     }
 
-    public List<Blog> getBlog_list() {
-        return blog_list;
+    public List<Blog> getBlogList() {
+        return blogList;
     }
 
-    public void setBlog_list(List<Blog> blog_list) {
-        this.blog_list = blog_list;
+    public void setBlogList(List<Blog> blogList) {
+        this.blogList = blogList;
     }
 
     public Integer getId() {

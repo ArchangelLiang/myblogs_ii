@@ -5,6 +5,7 @@ import com.gwg.pojo.Blog;
 import com.gwg.service.BlogService;
 import com.gwg.util.PageResult;
 import com.gwg.util.PageResultBuilder;
+import com.gwg.util.RecommendBlog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -56,4 +57,10 @@ public class BlogServiceImpl implements BlogService {
         this.blogMapper.saveBlog(blog);
         return blog;
     }
+
+    @Override
+    public List<RecommendBlog> recommendBlogTitle() {
+        return this.blogMapper.getRecommendBlogTitle();
+    }
+
 }

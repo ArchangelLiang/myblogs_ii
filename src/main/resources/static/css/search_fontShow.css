@@ -1,0 +1,46 @@
+.my-search-about {
+    margin-left: 0!important;
+    margin-right: 0!important;
+    margin-bottom: 3em;
+    padding-left: 12em;
+    padding-right: 12em;
+}
+.my-search-about-body {
+ }
+.my-about-parent {
+    padding: 1em;
+    margin-bottom: 2em;
+}
+.my-about {
+    height: 3em;
+}
+.my-about-type {
+    font-size: 16px;
+    font-weight: 600;
+}
+.my-about-type span {
+    float: left;
+    margin-right: 1em;
+}
+.my-about-typeName {
+    background-color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.content-cart {
+    border: none!important;
+}
+.primary-content-title
+,.primary-content {
+    border: none!important;
+}
+.my-recently-search li{
+    height: 2em;
+    line-height: 2em;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+.my-recently-search li:hover{
+    background-color: hsla(0,0%,71%,.1);
+}

@@ -1,6 +1,7 @@
 package com.gwg.mapper;
 
 import com.gwg.pojo.Blog;
+import com.gwg.util.RecommendBlog;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.mapping.FetchType;
@@ -13,6 +14,10 @@ public interface BlogMapper {
     @ResultMap("blogMap")
     @Select("select * from blog where id = #{id}")
     Blog getBlogById(@Param("id") Long id);
+
+    @ResultMap("blogMap")
+    @Select("select * from blog where type = #{id}")
+    List<Blog> getBlogByTypeId(Integer id);
 
     @Results(
             id = "blogMap",
@@ -36,6 +41,9 @@ public interface BlogMapper {
 
     @SelectProvider(type = BlogSqlProvider.class, method = "getBlogCountSQL")
     int countBlog(@Param("title") String title, @Param("typeId") Integer typeId,@Param("recommend") Integer recommend);
+
+    @Select("select id,title from blog where recommend = 1")
+    List<RecommendBlog> getRecommendBlogTitle();
 
     class BlogSqlProvider {
 

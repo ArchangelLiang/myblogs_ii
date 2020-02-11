@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--通用导航模块抽取-->
-<nav th:fragment="nav(t)" class="navbar navbar-inverse my-nav">
+<nav th:fragment="nav(t)" class="navbar navbar-inverse my-nav" style="margin-bottom: 20px!important;">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -23,13 +23,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li th:class="${t} == 'h'?'active':''"><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
+                <li th:class="${t} == 'h'?'active':''"><a th:href="@{/index}" href="index.html">首页<span class="sr-only">(current)</span></a></li>
                 <li th:class="${t} == 'c'?'active':''"><a href="categories.html">分类</a></li>
                 <li th:class="${t} == 't'?'active':''"><a href="total.html">归档</a></li>
             </ul>
-            <form class="navbar-form navbar-left">
+            <form action="search.html" th:action="@{/index}" class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="输入您感兴趣的内容">
+                    <input type="text" name="title" class="form-control" placeholder="输入您感兴趣的内容">
                 </div>
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>

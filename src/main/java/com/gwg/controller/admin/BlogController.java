@@ -53,10 +53,12 @@ public class BlogController {
         } else {
             if (blog.getId() != null) {
                 this.blogService.deleteBlogById(blog.getId());
+                blog.setUpdateTime(new Date());
+            } else {
+                Date date = new Date();
+                blog.setCreateTime(date);
+                blog.setUpdateTime(date);
             }
-            Date date = new Date();
-            blog.setCreateTime(date);
-            blog.setUpdateTime(date);
             blog.setUser((User) session.getAttribute("user"));
             this.blogService.saveBlog(blog);
             return new RequestResult("成功","http://localhost:9990/admin/listBlog");
