@@ -19,6 +19,114 @@
     <script src="../static/js/prism.js" th:src="@{/js/prism.js}"></script>
 	<script src="../static/lib/tocbot/dist/tocbot.min.js" th:src="@{/lib/tocbot/dist/tocbot.min.js}"></script>
     <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script>
+        window.onload = function () {
+            let flag = true;
+            let timeNum;
+
+            function scrollAnimate(num) {
+                let de = document.documentElement;
+                if (de.scrollTop === num) {
+                    flag = true;
+                    console.log('清除定时器，首次传入的参数='+num+',请除时的top=' + de.scrollTop);
+                    clearInterval(timeNum);
+                    return;
+                }
+                if (de.scrollTop > num) {
+                    if (de.scrollTop - num < 100) {
+                        if (de.scrollTop - num < 50) {
+                            de.scrollTop -= 1;
+                        }
+                        de.scrollTop -= 20;
+                    }
+                    de.scrollTop -= 100;
+                } else {
+                    if (de.scrollTop + 100 > num) {
+                        if (de.scrollTop + 50 > num) {
+                            if (de.scrollTop + 20 > num) {
+                                de.scrollTop += 1;
+                            } else {
+                                de.scrollTop += 20;
+                            }
+                        } else {
+                            de.scrollTop += 50;
+                        }
+                    } else {
+                        de.scrollTop += 100;
+                    }
+                }
+            }
+
+            let move_top = document.querySelector('.my-moveTop-btn');
+            document.addEventListener('scroll',function(){
+                console.log(document.documentElement.scrollTop);
+                if (document.documentElement.scrollTop > 700) {
+                    move_top.style.display='block';
+                } else {
+                    move_top.style.display='none';
+                }
+            });
+            move_top.addEventListener('click', function () {
+                if (flag === true) {
+                    flag = false;
+                    timeNum = setInterval(function () {
+                        scrollAnimate(0);
+                    }, 1);
+                }
+            });
+            let leave_btn = document.querySelector(".my-leave-msg-btn");
+            leave_btn.addEventListener('click', function () {
+                if (flag === true) {
+                    flag = false;
+                    let n = document.querySelector('.primary').offsetHeight - document.getElementById('my-leave-msg-body').offsetHeight-200;
+                    timeNum = setInterval(function () {
+                        console.log('留言动画参数首次为：' + n);
+                        scrollAnimate(n);
+                    }, 1);
+                }
+            });
+            let catalogue_btn = document.querySelector('.my-catalogue-btn');
+            let catalogue = document.querySelector('.my-categories-hidden');
+            let wechat= document.querySelector('.my-wechat-btn');
+            let wechat_hidden = document.querySelector('.my-wechat-hidden');
+            document.body.onclick=function(){
+                catalogue.style.display = 'none';
+                wechat_hidden.style.display = 'none';
+            };
+            catalogue_btn.addEventListener('click',function(e){
+                catalogue.style.display === 'block'?catalogue.style.display = 'none':catalogue.style.display = 'block';
+                wechat_hidden.style.display = 'none';
+                e.stopPropagation();
+            });
+            wechat.addEventListener('click',function(e){
+                wechat_hidden.style.display === 'block'?wechat_hidden.style.display = 'none':wechat_hidden.style.display = 'block';
+                catalogue.style.display = 'none';
+                e.stopPropagation();
+            });
+            //引入目录生成插件
+            tocbot.init({
+                // Where to render the table of contents.
+                tocSelector: '.js-toc',
+                // Where to grab the headings to build the table of contents.
+                contentSelector: '.js-toc-content',
+                // Which headings to grab inside of the contentSelector element.
+                headingSelector: 'h1, h2, h3',
+                // For headings inside relative or absolute positioned containers within content.
+                hasInnerContainers: true,
+            });
+            //引入二维码生成插件
+            const url = "http://www.gwgBlog.com";
+            const link = /*[[@{/blog/{id}(id=${blog.id})}]]*/'';
+            var qrcode = new QRCode("qrcode", {
+                text: url + link,
+                width: 120,
+                height: 120,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
+    </script>
     <style>
         .typo code {
             color: #1abc9c;
@@ -94,10 +202,10 @@
     </style>
 </head>
 <body class="container-fluid">
-<!--导航模块
-<nav class="navbar navbar-inverse my-nav">
+<!--导航模块-->
+<nav th:replace="~{common_fragment::nav('')}" class="navbar navbar-inverse my-nav">
     <div class="container-fluid">
-        &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1"
@@ -110,7 +218,7 @@
             <a class="navbar-brand" href="#">GwgBlog</a>
         </div>
 
-        &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class=""><a href="index.html">首页<span class="sr-only">(current)</span></a></li>
@@ -126,47 +234,29 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
             </ul>
-        </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
-    </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
-</nav>-->
-<!--引入导航模块-->
-<nav th:replace="~{common_fragment::nav('')}"></nav>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 <!--正文-->
 <div class="row primary">
     <div class="col-sm-12 col-md-9 my-blog">
         <div class="col-md-12 col-sm-12 my-blog-title">
             <strong>GwgBlog</strong>&nbsp;
-            <i class="glyphicon glyphicon-calendar"></i>&nbsp;&nbsp;<span>2020-1-12</span>
-            &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<span>199</span>
+            <i class="glyphicon glyphicon-calendar"></i>&nbsp;&nbsp;<span th:text="${blog.updateTime}">2020-1-12</span>
+            &nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-eye-open"></i>&nbsp;&nbsp;<span th:text="${blog.views}">199</span>
         </div>
         <div class="thumbnail">
             <div class="my-blog-img-control">
-                <img class="img-rounded my-blog-img" src="../static/image/code.jpg" alt="...">
+                <img class="img-rounded my-blog-img" src="../static/image/code.jpg" th:src="@{/image/code.jpg}" alt="...">
             </div>
             <div class="caption">
                 <div id="wrapper" class="my-blog-text typo typo-selection">
-                    <!--h3><span class="label label-info my-blog-mark">原创</span></h3>
-                    <h1 class="text-center my-blog-text-title">论阅读源码的重要性</h1>-->
-                    <h1 id="one">中文网页重设与排版：<i class="serif">Typo.css</i></h1><br/>
-
-                    <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
-                    <ol id="table">
-                        <li><a href="#section1">关于 <i class="serif">Typo.css</i></a></li>
-                        <li><a href="#section2">排版实例</a>
-                            <ul>
-                                <li><a href="#section2-1">例1：论语学而篇第一</a></li>
-                                <li><a href="#section2-2">例2：英文排版</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#section3">附录</a>
-                            <ul>
-                                <li><a href="#appendix1"><i class="serif">Typo.css</i> 排版偏重点</a></li>
-                                <li><a href="#appendix2">开源许可</a></li>
-                            </ul>
-                        </li>
-                    </ol>
-
-					<div class="js-toc-content">
+                    <!--标签-->
+                    <h3><span class="label label-info my-blog-mark" th:text="${blog.flag}">原创</span></h3>
+                    <!--标题-->
+                    <h1 class="text-center my-blog-text-title" th:text="${blog.title}">论阅读源码的重要性</h1>
+                    <!--博客内容-->
+					<div class="js-toc-content" th:utext="${blog.content}">
 						<h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
 
 						<p><i class="serif">Typo.css</i> 的目的是，在一致化浏览器排版效果的同时，构建最适合中文阅读的网页排版。</p>
@@ -278,8 +368,8 @@
                     <p>以上内容均为个人理解，如有错误欢迎指正</p>
                 </div>
                 <ul style="line-height: 30px;">
-                    <li>作者：Archangel</li>
-                    <li>发表时间：<span>2020-01-20</span></li>
+                    <li>作者：<span th:text="${blog.user.nickName}">Archangel</span></li>
+                    <li>发表时间：<span th:text="${blog.createTime}">2020-01-20</span></li>
                     <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
                     <li>联系作者：微信手机同号：15821007571</li>
                 </ul>
@@ -390,111 +480,5 @@
         <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
     </div>
 </footer>
-<script>
-    window.onload = function () {
-        let flag = true;
-        let timeNum;
-
-        function scrollAnimate(num) {
-            let de = document.documentElement;
-            if (de.scrollTop === num) {
-                flag = true;
-                console.log('清除定时器，首次传入的参数='+num+',请除时的top=' + de.scrollTop);
-                clearInterval(timeNum);
-                return;
-            }
-            if (de.scrollTop > num) {
-                if (de.scrollTop - num < 100) {
-                    if (de.scrollTop - num < 50) {
-                        de.scrollTop -= 1;
-                    }
-                    de.scrollTop -= 20;
-                }
-                de.scrollTop -= 100;
-            } else {
-                if (de.scrollTop + 100 > num) {
-                    if (de.scrollTop + 50 > num) {
-                        if (de.scrollTop + 20 > num) {
-                            de.scrollTop += 1;
-                        } else {
-                            de.scrollTop += 20;
-                        }
-                    } else {
-                        de.scrollTop += 50;
-                    }
-                } else {
-                    de.scrollTop += 100;
-                }
-            }
-        }
-
-        let move_top = document.querySelector('.my-moveTop-btn');
-        document.addEventListener('scroll',function(){
-            console.log(document.documentElement.scrollTop);
-            if (document.documentElement.scrollTop > 700) {
-                move_top.style.display='block';
-            } else {
-                move_top.style.display='none';
-            }
-        });
-        move_top.addEventListener('click', function () {
-            if (flag === true) {
-                flag = false;
-                timeNum = setInterval(function () {
-                    scrollAnimate(0);
-                }, 1);
-            }
-        });
-        let leave_btn = document.querySelector(".my-leave-msg-btn");
-        leave_btn.addEventListener('click', function () {
-            if (flag === true) {
-                flag = false;
-                let n = document.querySelector('.primary').offsetHeight - document.getElementById('my-leave-msg-body').offsetHeight-200;
-                timeNum = setInterval(function () {
-                    console.log('留言动画参数首次为：' + n);
-                    scrollAnimate(n);
-                }, 1);
-            }
-        });
-        let catalogue_btn = document.querySelector('.my-catalogue-btn');
-        let catalogue = document.querySelector('.my-categories-hidden');
-        let wechat= document.querySelector('.my-wechat-btn');
-        let wechat_hidden = document.querySelector('.my-wechat-hidden');
-        document.body.onclick=function(){
-            catalogue.style.display = 'none';
-            wechat_hidden.style.display = 'none';
-        };
-        catalogue_btn.addEventListener('click',function(e){
-            catalogue.style.display === 'block'?catalogue.style.display = 'none':catalogue.style.display = 'block';
-            wechat_hidden.style.display = 'none';
-            e.stopPropagation();
-        });
-        wechat.addEventListener('click',function(e){
-            wechat_hidden.style.display === 'block'?wechat_hidden.style.display = 'none':wechat_hidden.style.display = 'block';
-            catalogue.style.display = 'none';
-            e.stopPropagation();
-        });
-        //引入目录生成插件
-        tocbot.init({
-            // Where to render the table of contents.
-            tocSelector: '.js-toc',
-            // Where to grab the headings to build the table of contents.
-            contentSelector: '.js-toc-content',
-            // Which headings to grab inside of the contentSelector element.
-            headingSelector: 'h1, h2, h3',
-            // For headings inside relative or absolute positioned containers within content.
-            hasInnerContainers: true,
-        });
-        //引入二维码生成插件
-        var qrcode = new QRCode("qrcode", {
-            text: "http://jindo.dev.naver.com/collie",
-            width: 120,
-            height: 120,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
-    }
-</script>
 </body>
 </html>

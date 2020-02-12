@@ -3,6 +3,7 @@ package com.gwg.service.impl;
 import com.gwg.mapper.BlogMapper;
 import com.gwg.pojo.Blog;
 import com.gwg.service.BlogService;
+import com.gwg.util.MarkdownUtils;
 import com.gwg.util.PageResult;
 import com.gwg.util.PageResultBuilder;
 import com.gwg.util.RecommendBlog;
@@ -61,6 +62,13 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<RecommendBlog> recommendBlogTitle() {
         return this.blogMapper.getRecommendBlogTitle();
+    }
+
+    @Override
+    public Blog getBlogAndConvert(Long id) {
+        Blog blog = this.blogMapper.getBlogById(id);
+        blog.setContent(MarkdownUtils.markdownToHtml(blog.getContent()));
+        return blog;
     }
 
 }

@@ -20,4 +20,6 @@ public interface BlogService {
 
     List<RecommendBlog> recommendBlogTitle();
 
+    Blog getBlogAndConvert(Long id);
+
 }

@@ -29,7 +29,7 @@
             </ul>
             <form action="search.html" th:action="@{/index}" class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="输入您感兴趣的内容">
+                    <input type="text" name="title" th:value="${query == null}?'':${query}" class="form-control" placeholder="输入您感兴趣的内容">
                 </div>
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>

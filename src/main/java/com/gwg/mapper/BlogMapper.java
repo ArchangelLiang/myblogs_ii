@@ -25,7 +25,8 @@ public interface BlogMapper {
                    @Result(id = true,column = "id",property = "id"),
                    @Result(column = "create_time",property = "createTime",jdbcType = JdbcType.TIMESTAMP),
                    @Result(column = "update_time",property = "updateTime",jdbcType = JdbcType.TIMESTAMP),
-                   @Result(column = "type",property = "type",one = @One(select = "com.gwg.mapper.TypeMapper.getTypeById",fetchType = FetchType.LAZY))
+                   @Result(column = "type",property = "type",one = @One(select = "com.gwg.mapper.TypeMapper.getTypeById",fetchType = FetchType.LAZY)),
+                   @Result(column = "user_id",property = "user",one = @One(select = "com.gwg.mapper.UserMapper.findUserById"))
            }
     )
     @SelectProvider(type = BlogSqlProvider.class, method = "getSearchSQL")

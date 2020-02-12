@@ -78,7 +78,7 @@
 									<!--每条博客卡片-->
 									<div th:each="blog:${blogPageResult.result}" th:object="${blog}" class="panel panel-default content-cart">
 										<div class="panel-body" style="position: relative;">
-											<a href="blog.html">
+											<a href="blog.html" th:href="@{/blog/{id}(id=${blog.id})}">
 												<div class="blog-content col-md-9 col-sm-12">
 													<h3 class="content-title" th:text="*{title}" style="margin-top: 0 !important;">Spring相关知识点总结</h3>
 													<div>
@@ -117,7 +117,7 @@
 									<!--/*-->
 									<div class="panel panel-default content-cart">
 										<div class="panel-body" style="position: relative;">
-											<a href="blog.html">
+											<a href="blog.html" >
 												<div class="blog-content col-md-9 col-sm-12">
 													<h3 class="content-title" style="margin-top: 0 !important;">Spring相关知识点总结</h3>
 													<div>

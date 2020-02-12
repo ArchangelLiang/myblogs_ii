@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
@@ -22,6 +23,13 @@ public class IndexController {
     private BlogService blogService;
     @Autowired
     private TypeService typeService;
+
+    @GetMapping("/blog/{id}")
+    public String getBlogById(@PathVariable("id") Long id, ModelMap model){
+        Blog blog = this.blogService.getBlogAndConvert(id);
+        model.addAttribute("blog",blog);
+        return "blog";
+    }
 
     @GetMapping("listBlog")
     public String listBlog(@RequestParam(value = "title", required = false) String title,
@@ -54,6 +62,7 @@ public class IndexController {
             model.addAttribute("recommendBlogTitleList", recommendBlogTitleList);
             return "index";
         }
+        model.addAttribute("query",title);
         return "search";
     }
 
