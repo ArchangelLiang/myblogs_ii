@@ -26,27 +26,37 @@
 
             function scrollAnimate(num) {
                 let de = document.documentElement;
-                if (de.scrollTop === num) {
+                if (Math.abs(de.scrollTop - num) <= 1) {
                     flag = true;
                     console.log('清除定时器，首次传入的参数='+num+',请除时的top=' + de.scrollTop);
                     clearInterval(timeNum);
                     return;
                 }
                 if (de.scrollTop > num) {
-                    if (de.scrollTop - num < 100) {
-                        if (de.scrollTop - num < 50) {
-                            de.scrollTop -= 1;
-                        }
-                        de.scrollTop -= 20;
-                    }
-                    de.scrollTop -= 100;
-                } else {
-                    if (de.scrollTop + 100 > num) {
-                        if (de.scrollTop + 50 > num) {
-                            if (de.scrollTop + 20 > num) {
-                                de.scrollTop += 1;
+                    if (de.scrollTop - num < 200) {
+                        if (de.scrollTop - num < 100) {
+                            if (de.scrollTop - num < 50){
+                                de.scrollTop -= 1;
                             } else {
-                                de.scrollTop += 20;
+                                de.scrollTop -= 20;
+                            }
+                        } else {
+                            de.scrollTop -= 50;
+                        }
+                    } else {
+                        de.scrollTop -= 100;
+                    }
+                } else {
+                    if (de.scrollTop + 200 > num) {
+                        if (de.scrollTop + 100 > num) {
+                            if (de.scrollTop + 20 > num) {
+                                if (de.scrollTop + 10 > num){
+                                    de.scrollTop += 1;
+                                } else {
+                                    de.scrollTop += 5;
+                                }
+                            } else {
+                                de.scrollTop += 10;
                             }
                         } else {
                             de.scrollTop += 50;
@@ -59,7 +69,6 @@
 
             let move_top = document.querySelector('.my-moveTop-btn');
             document.addEventListener('scroll',function(){
-                console.log(document.documentElement.scrollTop);
                 if (document.documentElement.scrollTop > 700) {
                     move_top.style.display='block';
                 } else {
@@ -421,11 +430,11 @@
                 <div class="row text-center">
                     <div class="clearfix" style="display: inline-block;">
                         <div class="" style="width: 200px;float: left;margin-right: 10px;">
-                            <img src="../static/image/my-zfb.png" style="width: 100%;" alt="..." class="img-thumbnail">
+                            <img src="../static/image/my-zfb.png" th:src="@{/image/my-zfb.png}" style="width: 100%;" alt="..." class="img-thumbnail">
                             <h4 class="text-center">支付宝</h4>
                         </div>
                         <div class="" style="width: 200px;float: left;margin-left: 10px;">
-                            <img src="../static/image/my-wx.png" style="width: 100%;" alt="..." class="img-thumbnail">
+                            <img src="../static/image/my-wx.png" th:src="@{/image/my-wx.png}" style="width: 100%;" alt="..." class="img-thumbnail">
                             <h4 class="text-center">微信</h4>
                         </div>
                     </div>

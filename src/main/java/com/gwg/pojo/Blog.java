@@ -1,6 +1,7 @@
 package com.gwg.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -20,6 +21,7 @@ public class Blog implements Serializable {
     private Integer commentAble;
     private Integer published;
     private Integer recommend;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     private Date updateTime;
 

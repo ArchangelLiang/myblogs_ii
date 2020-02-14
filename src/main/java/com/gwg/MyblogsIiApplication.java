@@ -10,6 +10,7 @@ import org.springframework.cache.annotation.EnableCaching;
 @MapperScan(basePackages = "com.gwg.mapper")
 public class MyblogsIiApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(MyblogsIiApplication.class, args);
     }

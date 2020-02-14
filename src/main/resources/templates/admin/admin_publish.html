@@ -60,8 +60,9 @@
                     });
                 }
                 $("button[name='publish']").click(function(){
-                    let id,flag,title,content,typeId,recommend,shareStatement,appreciation,commentAble,firstPicture,published;
+                    let id,flag,title,content,typeId,recommend,shareStatement,appreciation,commentAble,firstPicture,published,createTime;
                     id = $("input[name='id']").val();
+                    createTime = $("input[name='createTime']").val();
                     flag = flagChange.innerHTML;
                     title = $("input[name='title']").val();
                     content = $("textarea[name='content']").val();
@@ -79,7 +80,7 @@
                     $.ajax({
                         type: 'post',
                         url: 'http://localhost:9990/admin/saveBlog',
-                        data: {id: id,flag: flag,title: title,content: content,'type.id': typeId,recommend: recommend,shareStatement: shareStatement,appreciation: appreciation,commentAble: commentAble,firstPicture: firstPicture,published: published},
+                        data: {id: id,flag: flag,title: title,content: content,'type.id': typeId,recommend: recommend,shareStatement: shareStatement,appreciation: appreciation,commentAble: commentAble,firstPicture: firstPicture,published: published,createTime: createTime},
                         success: function(data){
                             console.log('收到服务器返回的数据：' + data);
                             if (data.status === '成功'){
@@ -143,10 +144,11 @@
 <!--博客标题-->
 <div class="my-publish-title row my-margin-control">
     <input type="hidden" name="id" th:value="${updateBlog == null} ? '':${updateBlog.id}">
+    <input type="hidden" name="createTime" th:value="${updateBlog == null} ? '':${updateBlog.createTime}">
     <div class="input-group col-md-12" style="padding-left: 10%;padding-right: 10%;">
         <div class="input-group input-group-lg">
             <div class="input-group-btn">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" th:text="${updateBlog == null} ? _:${updateBlog.flag}" aria-expanded="false"><span id="flagChange">原创</span> <span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false"><span id="flagChange" th:text="${updateBlog == null} ? _:${updateBlog.flag}">原创</span> <span class="caret"></span></button>
                 <ul class="dropdown-menu" style="min-width: 0 !important;z-index: 99999;">
                     <li><a class="flag" href="#">原创</a></li>
                     <li><a class="flag" href="#">转载</a></li>

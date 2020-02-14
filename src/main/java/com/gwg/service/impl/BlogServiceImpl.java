@@ -13,9 +13,11 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional(rollbackFor = Exception.class)
 @CacheConfig(cacheNames = "blog")
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -50,6 +52,7 @@ public class BlogServiceImpl implements BlogService {
     public boolean deleteBlogById(Long id) {
         return this.blogMapper.deleteBlogById(id);
     }
+
 
     @CachePut(key = "#blog.id")
     @Override
