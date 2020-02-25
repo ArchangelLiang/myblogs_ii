@@ -103,12 +103,14 @@
                 wechat_hidden.style.display = 'none';
             };
             catalogue_btn.addEventListener('click',function(e){
-                catalogue.style.display === 'block'?catalogue.style.display = 'none':catalogue.style.display = 'block';
+                // catalogue.style.display === 'block'?catalogue.style.display = 'none':catalogue.style.display = 'block';
+                $(catalogue).fadeToggle(300);
                 wechat_hidden.style.display = 'none';
                 e.stopPropagation();
             });
             wechat.addEventListener('click',function(e){
-                wechat_hidden.style.display === 'block'?wechat_hidden.style.display = 'none':wechat_hidden.style.display = 'block';
+                // wechat_hidden.style.display === 'block'?wechat_hidden.style.display = 'none':wechat_hidden.style.display = 'block';
+                $(wechat_hidden).fadeToggle(300);
                 catalogue.style.display = 'none';
                 e.stopPropagation();
             });
@@ -267,6 +269,10 @@
                     <!--博客内容-->
 					<div class="js-toc-content" th:utext="${blog.content}">
 						<h2 id="section1">一、关于 <i class="serif">Typo.css</i></h2>
+						<h2 id="section2">一、关于 <i class="serif">Typo.css</i></h2>
+						<h2 id="section3">一、关于 <i class="serif">Typo.css</i></h2>
+						<h2 id="section4">一、关于 <i class="serif">Typo.css</i></h2>
+						<h2 id="section5">一、关于 <i class="serif">Typo.css</i></h2>
 
 						<p><i class="serif">Typo.css</i> 的目的是，在一致化浏览器排版效果的同时，构建最适合中文阅读的网页排版。</p>
 						<h4>现状和如何去做：</h4>
@@ -448,18 +454,20 @@
 </div><!-- /.modal -->
 <!--固定定位的导航-->
 <ul class="list-group my-fixed-list">
-    <li class="list-group-item my-catalogue-btn">目录</li>
-	<div class="my-categories-hidden">
-		<ol class="js-toc" style="width: 250px;">
+    <li class="list-group-item my-catalogue-btn">目录
+        <div class="my-categories-hidden">
+            <ol class="js-toc" style="width: 250px;">
 
-		</ol>
-	</div>
+            </ol>
+        </div>
+    </li>
     <li class="list-group-item my-leave-msg-btn">留言</li>
-    <li class="list-group-item iconfont icon-wechat text-center my-wechat-btn"></li>
-	<div id="qrcode" class="my-wechat-hidden" style="padding: 7px;">
-<!--		<img src="./image/personalCode.jpg" class="img-rounded" style="border: 8px solid white;width: 120px;">-->
-	</div>
-    <li class="list-group-item glyphicon glyphicon-menu-up text-center my-moveTop-btn" style="display: none;"></li>
+    <li class="list-group-item iconfont icon-wechat text-center my-wechat-btn">
+        <div id="qrcode" class="my-wechat-hidden" style="padding: 7px;">
+            <!--		<img src="./image/personalCode.jpg" class="img-rounded" style="border: 8px solid white;width: 120px;">-->
+        </div>
+    </li>
+    <li class="list-group-item glyphicon glyphicon-menu-up text-center my-moveTop-btn" style="display: none;border-top: none!important;"></li>
 </ul>
 <!-- 页脚 -->
 <footer th:replace="common_fragment::footer" class="row">

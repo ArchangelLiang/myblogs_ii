@@ -38,8 +38,32 @@ public class BlogServiceImpl implements BlogService {
         }
         int start = (pageNum - 1) * pageSize;
         List<Blog> blog_list = this.blogMapper.listBlog(title, typeId, recommend,start, pageSize);
+        blog_list.forEach(blog -> {
+            String content = blog.getContent();
+            blog.setDesc(builderDesc(content.substring(0, Math.min(content.length(), 230))));
+        });
         int total = this.blogMapper.countBlog(title, typeId,recommend);
         return PageResultBuilder.builder(blog_list, pageNum, pageSize, total);
+    }
+
+    private String builderDesc(String desc){
+        StringBuilder descBuilder = new StringBuilder();
+        for (int i = 0; i < desc.length(); i++) {
+            String s = String.valueOf(desc.charAt(i));
+            if ((s.equals("#") || s.equals("`") || s.equals("*") || s.equals("-")) && (i + 1) < desc.length()){
+                char next = desc.charAt(i + 1);
+                if (compare(next,"#") || compare(next,"`") || compare(next," ") || compare(next,"*")) {
+                    i++;
+                    continue;
+                }
+            }
+            descBuilder.append(s);
+        }
+        return descBuilder.toString();
+    }
+
+    private boolean compare(char src,String desc){
+        return String.valueOf(src).equals(desc);
     }
 
     @Override

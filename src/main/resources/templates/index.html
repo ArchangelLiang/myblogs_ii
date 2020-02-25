@@ -99,7 +99,7 @@
 								<a href="blog.html" th:href="@{/blog/{id}(id=${blog.id})}">
 									<div class="blog-content col-md-9 col-sm-12">
 										<h3 th:text="*{title}" class="content-title" style="margin-top: 0 !important;">Spring相关知识点总结</h3>
-										<div>
+										<div th:text="${blog.desc}">
 											IOC（Inversion of Control/控制反转）相关内容
 											概念：
 											控制：资源的获取方式；

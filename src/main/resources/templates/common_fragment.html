@@ -24,8 +24,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li th:class="${t} == 'h'?'active':''"><a th:href="@{/index}" href="index.html">首页<span class="sr-only">(current)</span></a></li>
-                <li th:class="${t} == 'c'?'active':''"><a href="categories.html">分类</a></li>
-                <li th:class="${t} == 't'?'active':''"><a href="total.html">归档</a></li>
+                <li th:class="${t} == 'c'?'active':''"><a th:href="@{/category/toCategories}" href="categories.html">分类</a></li>
+                <li th:class="${t} == 't'?'active':''"><a th:href="@{/total/toTotalPage}" href="total.html">归档</a></li>
             </ul>
             <form action="search.html" th:action="@{/index}" class="navbar-form navbar-left">
                 <div class="form-group">
@@ -34,7 +34,7 @@
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li th:class="${t} == 'm'?'active':''"><a href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
+                <li th:class="${t} == 'm'?'active':''"><a th:href="@{/me/toMePage}" href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

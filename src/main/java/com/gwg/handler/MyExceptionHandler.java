@@ -24,6 +24,7 @@ public class MyExceptionHandler {
     @ExceptionHandler({Exception.class})
     public ModelAndView handlerException(HttpServletRequest request, Exception exception) {
         logger.error("请求url:{},出现的异常：{}", request.getRequestURL(), exception.getClass());
+        exception.printStackTrace();
         ResponseStatus responseStatus = AnnotationUtils.findAnnotation(exception.getClass(), ResponseStatus.class);
         if (responseStatus != null) {
             request.setAttribute("javax.servlet.error.status_code",responseStatus.value().value());

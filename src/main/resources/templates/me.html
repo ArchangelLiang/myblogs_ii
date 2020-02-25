@@ -110,7 +110,7 @@
 				</div>
 		</div>
 		<!-- 页脚 -->
-		<footer th:replace="common_fragment::footer" class="row">
+		<footer class="row" style="margin-top: 0!important;">
 			<div class="footer-top row">
 				<div class="footer-top-p">
 					<div class="footer-one col-md-3 col-sm-12">
@@ -129,7 +129,7 @@
 						<p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
 					</div>
 					<div class="footer-four col-md-3 col-sm-12">
-						<img src="../static/image/personalCode.jpg" />
+						<img th:src="@{/image/personalCode.jpg}" src="../static/image/personalCode.jpg" />
 					</div>
 				</div>
 			</div>

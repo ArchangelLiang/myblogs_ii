@@ -25,6 +25,8 @@ public class Blog implements Serializable {
     private Date createTime;
     private Date updateTime;
 
+    private String desc;
+
     private SimpleDateFormat dateFormat;
 
     private User user;
@@ -181,6 +183,14 @@ public class Blog implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     @Override

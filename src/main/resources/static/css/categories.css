@@ -36,18 +36,6 @@
 	font-size: 18px;
 	font-weight: 700;
 }
-.blog-content {
-	 text-overflow: -o-ellipsis-lastline;
-	  overflow: hidden;
-	  text-overflow: ellipsis;
-	  display: -webkit-box;
-	  -webkit-line-clamp: 6;
-	  line-clamp: 6;
-	  -webkit-box-orient: vertical;
-	line-height: 26px;
-	color: #5e5e5e;
-	font-size: 13px;
-}
 .blog-content img {
 	height: 100%;
 }
@@ -95,4 +83,31 @@
 .my-btn-active {
 	border-color: deepskyblue !important;
 	color: deepskyblue !important;
+}
+.my-tag-body ul {
+	padding-left: 0;
+}
+.my-tag-body ul li {
+	position: relative;
+	float: left;
+	border: 2px solid #faebcc;
+	border-radius: 5px;
+	padding: 3px 8px;
+	font-size: 12px;
+	margin-left: 22px;
+	margin-bottom: 10px;
+}
+.my-tag-body ul li:before {
+	content: "";
+	position: absolute;
+
+	width: 10px;
+	height: 10px;
+	border: 2px solid #faebcc;
+	top: 50%;
+	left: -17%;
+	background-color: white;
+	transform: translateY(-50%) rotate(-45deg);
+	border-right: none;
+	border-bottom: none;
 }

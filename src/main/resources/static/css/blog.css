@@ -87,13 +87,17 @@ li {
 .my-wechat-hidden {
 	display: none;
 	position: absolute;
+	top: 50%;
 	right: 120%;
-	bottom: 70%;
+	/*bottom: 70px;*/
 	min-width: 60px;
 	min-height: 30px;
 	background-color: white;
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
+}
+.my-categories-hidden {
+	transform: translateY(-50%);
 }
 .my-categories-hidden::after,
 .my-wechat-hidden::after{
@@ -109,8 +113,11 @@ li {
 	border-top: 1px solid #DDDDDD;
 }
 .my-wechat-hidden {
-	bottom: -30%;
+	/*bottom: -30%;*/
+	transform: translateY(-50%);
 }
 .my-wechat-hidden::after {
+	top: 50%;
 	right: -5%;
+	transform: translateY(-50%) rotate(45deg);
 }
