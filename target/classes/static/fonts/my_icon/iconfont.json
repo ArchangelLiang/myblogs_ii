@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12759446",
+      "name": "wechat",
+      "font_class": "wechat",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "12759454",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "12909279",
+      "name": "Github",
+      "font_class": "github",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    }
+  ]
+}

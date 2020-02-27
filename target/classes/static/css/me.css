@@ -1,0 +1,109 @@
+.my-me {
+	padding: 0 10%;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.my-me-img,
+.my-me-list {
+	margin-bottom: 5em;
+	margin-top: 3em;
+}
+.my-hobby,
+.my-skill{
+	position: relative;
+	display: inline-block;
+	border-radius: 5px;
+	text-align: center;
+	padding: 0 8px;
+	margin-left: 3%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.my-hobby::before,
+.my-skill::before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%) translateX(-14px) rotate(-45deg);
+	width: 10px;
+	height: 10px;
+	background-color: white;
+}
+@media screen and (max-width: 991px) {
+	.my-hobby::before,
+	.my-skill::before {
+		width: 7px;
+		height: 7px;
+		transform: translateY(-50%) translateX(-13px) rotate(-45deg);
+	}
+}
+.my-hobby {
+	border: 2px solid deeppink;
+	color: deeppink;
+}
+.my-hobby::before {
+	border: 2px solid deeppink;
+}
+.my-skill {
+	border: 2px solid deepskyblue;
+	color: deepskyblue;
+}
+.my-skill::before {
+	border: 2px solid deepskyblue;
+}
+.my-hobby::before,
+.my-skill::before {
+	border-right: none;
+	border-bottom: none;
+}
+.my-contact {
+	position: relative;
+	margin-right: 10px;
+	background-color: white;
+	border: none;
+	border-radius: 50%;
+}
+.my-contact:hover {
+	background-color: #f5f5f5;
+}
+#my-contact-QQ-body,
+#my-contact-wechat-body{
+	display: none;
+	position: absolute;
+	top: 42px;
+	width: 150px;
+	height: 30px;
+	text-align: center;
+	line-height: 28px;
+	border: 1px solid #CCCCCC;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+	padding: 1px;
+}
+#my-contact-QQ-body {
+	left: -5%;
+}
+#my-contact-wechat-body {
+	left: 5%;
+}
+#my-contact-QQ-body::before,
+#my-contact-wechat-body::before{
+	content: "";
+	position: absolute;
+	left: 30%;
+	top: -27%;
+	transform: rotate(45deg);
+	width: 15px;
+	height: 15px;
+	border: 1px solid #CCCCCC;
+	border-right: none;
+	border-bottom: none;
+	background-color: white;
+}
+.my-contact-github {
+	color: black;
+}
+.my-contact-github:hover {
+	color: black;
+	text-decoration: none;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>fragment</title>
+</head>
+<body>
+<!--通用导航模块抽取-->
+<nav th:fragment="nav(t)" class="navbar navbar-inverse my-nav" style="margin-bottom: 20px!important;">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">GwgBlog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li th:class="${t} == 'h'?'active':''"><a th:href="@{/index}" href="index.html">首页<span class="sr-only">(current)</span></a></li>
+                <li th:class="${t} == 'c'?'active':''"><a th:href="@{/category/toCategories}" href="categories.html">分类</a></li>
+                <li th:class="${t} == 't'?'active':''"><a th:href="@{/total/toTotalPage}" href="total.html">归档</a></li>
+            </ul>
+            <form action="search.html" th:action="@{/index}" class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" name="title" th:value="${query == null}?'':${query}" class="form-control" placeholder="输入您感兴趣的内容">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li th:class="${t} == 'm'?'active':''"><a th:href="@{/me/toMePage}" href="me.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;关于我</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--通用底部模块抽取-->
+<footer th:fragment="footer" class="row">
+    <div class="footer-top row">
+        <div class="footer-top-p">
+            <div class="footer-one col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">编程之道</p>
+                <p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">编程之道</p>
+                <p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">联系我</p>
+                <p class="col-sm-4 col-md-12">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12">
+                <img th:src="@{/image/personalCode.jpg}" src="../static/image/personalCode.jpg"  alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>

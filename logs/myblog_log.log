@@ -1,0 +1,1213 @@
+2020-02-27 17:20:25.588  INFO 61012 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 61012 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 17:20:25.603 DEBUG 61012 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 17:20:25.604  INFO 61012 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 17:20:25.794  INFO 61012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 17:20:25.795  INFO 61012 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 17:20:28.627  INFO 61012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 17:20:28.665  INFO 61012 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 17:20:28.667  INFO 61012 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 17:20:29.026  INFO 61012 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 17:20:29.028  INFO 61012 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3232 ms
+2020-02-27 17:20:30.657  INFO 61012 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 17:20:30.812  INFO 61012 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 17:20:31.679  INFO 61012 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 17:20:31.782  INFO 61012 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 17:20:31.794  INFO 61012 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 7.287 seconds (JVM running for 10.351)
+2020-02-27 17:21:25.041  INFO 61012 --- [http-nio-9990-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 17:21:25.041  INFO 61012 --- [http-nio-9990-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 17:21:25.050  INFO 61012 --- [http-nio-9990-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-02-27 17:21:25.441 ERROR 61012 --- [http-nio-9990-exec-2] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-9990-exec-2] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "blogPageResult.result" (template: "index" - line 97, col 12)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "blogPageResult.result" (template: "index" - line 97, col 12)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'result' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 70 common frames omitted
+
+2020-02-27 17:21:25.459 ERROR 61012 --- [http-nio-9990-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'result' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-02-27 17:21:33.728  INFO 61012 --- [http-nio-9990-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-27 17:21:33.892 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 17:21:33.903 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 17:21:33.975 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 17:21:33.976 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 17:21:33.978 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 17:21:33.985 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 17:21:33.990 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 17:21:33.990 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 17:21:33.991 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 17:21:33.997 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 17:21:33.997 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 17:21:34.000 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:21:34.000 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 17:21:34.003 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:21:34.003 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:21:34.003 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 17:21:34.005 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:21:34.006 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:21:34.007 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:21:34.007 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 17:21:34.008 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:21:34.009 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 17:21:34.010 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:21:34.010 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:21:34.011 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 17:21:34.011 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:21:34.012 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:21:34.012 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 17:21:34.012 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:21:34.013 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:21:34.013 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:21:34.020 DEBUG 61012 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:21:34.020 DEBUG 61012 --- [http-nio-9990-exec-4] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 17:21:34.023 DEBUG 61012 --- [http-nio-9990-exec-4] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 17:21:34.024 DEBUG 61012 --- [http-nio-9990-exec-4] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 17:21:34.025 DEBUG 61012 --- [http-nio-9990-exec-4] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 17:21:44.237 DEBUG 61012 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 17:21:44.238 DEBUG 61012 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 17:21:44.240 DEBUG 61012 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 17:21:44.240 DEBUG 61012 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 17:21:44.240 DEBUG 61012 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 17:21:44.240 DEBUG 61012 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 17:22:12.896 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog WHERE (title like ?) LIMIT ? , ? 
+2020-02-27 17:22:12.896 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: %s%(String), 0(Integer), 5(Integer)
+2020-02-27 17:22:12.899 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 17:22:12.899 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 17:22:12.901 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 17:22:12.902 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 3
+2020-02-27 17:22:12.904 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog WHERE (title like ?) 
+2020-02-27 17:22:12.904 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: %s%(String)
+2020-02-27 17:22:12.905 DEBUG 61012 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 17:36:30.972  INFO 61012 --- [http-nio-9990-exec-7] com.gwg.aspects.LoggingAspect            : -----doBefore-----请求详情：RequestLog{url='http://127.0.0.1:9990/admin/login', ip='127.0.0.1', class_method='com.gwg.controller.admin.LoginController.login()', params=[zio, gao1742277838, org.apache.catalina.session.StandardSessionFacade@164bd98c, {}]}
+2020-02-27 17:36:30.993 DEBUG 61012 --- [http-nio-9990-exec-7] c.g.m.U.findUserByUserNameAndPassword    : ==>  Preparing: select * from user where user_name=? and password = ? 
+2020-02-27 17:36:30.993 DEBUG 61012 --- [http-nio-9990-exec-7] c.g.m.U.findUserByUserNameAndPassword    : ==> Parameters: zio(String), 19099cf16aa099b278f4d8bd6d4b7cb6(String)
+2020-02-27 17:36:30.994 DEBUG 61012 --- [http-nio-9990-exec-7] c.g.m.U.findUserByUserNameAndPassword    : <==      Total: 0
+2020-02-27 17:36:30.996  INFO 61012 --- [http-nio-9990-exec-7] com.gwg.aspects.LoggingAspect            : -----doPost-----return value is redirect:/admin
+2020-02-27 17:36:30.996  INFO 61012 --- [http-nio-9990-exec-7] com.gwg.aspects.LoggingAspect            : -----doFinally-----
+2020-02-27 17:37:18.620  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doBefore-----请求详情：RequestLog{url='http://127.0.0.1:9990/admin/login', ip='127.0.0.1', class_method='com.gwg.controller.admin.LoginController.login()', params=[archangel, gao1742277838, org.apache.catalina.session.StandardSessionFacade@164bd98c, {}]}
+2020-02-27 17:37:18.621 DEBUG 61012 --- [http-nio-9990-exec-5] c.g.m.U.findUserByUserNameAndPassword    : ==>  Preparing: select * from user where user_name=? and password = ? 
+2020-02-27 17:37:18.621 DEBUG 61012 --- [http-nio-9990-exec-5] c.g.m.U.findUserByUserNameAndPassword    : ==> Parameters: archangel(String), 19099cf16aa099b278f4d8bd6d4b7cb6(String)
+2020-02-27 17:37:18.622 DEBUG 61012 --- [http-nio-9990-exec-5] c.g.m.U.findUserByUserNameAndPassword    : <==      Total: 1
+2020-02-27 17:37:18.622  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doPost-----return value is admin/admin
+2020-02-27 17:37:18.622  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doFinally-----
+2020-02-27 17:37:20.496  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doBefore-----请求详情：RequestLog{url='http://127.0.0.1:9990/admin/listBlog', ip='127.0.0.1', class_method='com.gwg.controller.admin.BlogController.listBlog()', params=[null, null, null, 1, 5, {}]}
+2020-02-27 17:37:20.501 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 17:37:20.502 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 17:37:20.510 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.510 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 17:37:20.511 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 17:37:20.518 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 17:37:20.519 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 17:37:20.519 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 17:37:20.520 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 17:37:20.523 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 17:37:20.524 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 17:37:20.524 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.525 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 17:37:20.525 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:20.525 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.525 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 17:37:20.529 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.530 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:20.531 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:20.531 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 17:37:20.531 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.531 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 17:37:20.532 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:20.532 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.533 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 17:37:20.533 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:20.534 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.535 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 17:37:20.536 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:20.536 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.536 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:37:20.540 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:37:20.540 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 17:37:20.540  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doPost-----return value is admin/admin_blog
+2020-02-27 17:37:20.540  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doFinally-----
+2020-02-27 17:37:20.547 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 17:37:20.547 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 2(Integer)
+2020-02-27 17:37:20.549 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.550 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 17:37:20.551 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.551 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:20.552 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:20.553 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 17:37:20.553 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 17:37:20.555 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 17:37:20.556 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 4(Integer)
+2020-02-27 17:37:20.556 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.557 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:37:20.558 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.559 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:20.559 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:20.563 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:37:20.564 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 17:37:20.564 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 17:37:20.564 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 4(Integer)
+2020-02-27 17:37:20.565 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.565 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:37:20.567 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.567 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:20.568 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:20.574 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:37:20.575 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 17:37:20.576 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 17:37:20.577 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 4(Integer)
+2020-02-27 17:37:20.581 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.582 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:37:20.586 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.588 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:20.589 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:20.596 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:37:20.596 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 17:37:20.601 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 17:37:20.601 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 4(Integer)
+2020-02-27 17:37:20.602 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:20.603 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:37:20.606 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:20.606 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:20.609 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:20.614 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:37:20.614 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 17:37:26.216  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doBefore-----请求详情：RequestLog{url='http://127.0.0.1:9990/admin/toPublish', ip='127.0.0.1', class_method='com.gwg.controller.admin.BlogController.toPublish()', params=[17, {}]}
+2020-02-27 17:37:26.216 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 17:37:26.217 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 17:37:26.217 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.217 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 17:37:26.217 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:26.218 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.218 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 17:37:26.219 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:26.219 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:26.219 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:26.220 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 17:37:26.220 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.220 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 17:37:26.222 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:26.222 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.222 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 17:37:26.222 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:26.223 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.223 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 17:37:26.223 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 17:37:26.223 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.223 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 17:37:26.227 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 17:37:26.228 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 17:37:26.230 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 17:37:26.230 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 17:37:26.231 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:26.231 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 17:37:26.232 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 17:37:26.232 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 17:37:26.233  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doPost-----return value is admin/admin_publish
+2020-02-27 17:37:26.233  INFO 61012 --- [http-nio-9990-exec-5] com.gwg.aspects.LoggingAspect            : -----doFinally-----
+2020-02-27 17:37:26.250 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 17:37:26.250 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 2(Integer)
+2020-02-27 17:37:26.251 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 17:37:26.251 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 17:37:26.253 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 17:37:26.253 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 17:37:26.254 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 17:37:26.254 DEBUG 61012 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 17:37:26.254 DEBUG 61012 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 20:50:53.989  INFO 71540 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 71540 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 20:50:53.989 DEBUG 71540 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 20:50:53.989  INFO 71540 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 20:50:54.039  INFO 71540 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 20:50:54.039  INFO 71540 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 20:50:54.944  INFO 71540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 20:50:54.954  INFO 71540 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 20:50:54.954  INFO 71540 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 20:50:55.014  INFO 71540 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 20:50:55.014  INFO 71540 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 975 ms
+2020-02-27 20:50:55.404  INFO 71540 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 20:50:55.464  INFO 71540 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 20:50:55.644  INFO 71540 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 20:50:55.684  INFO 71540 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 20:50:55.684  INFO 71540 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 2.007 seconds (JVM running for 2.839)
+2020-02-27 20:51:02.835  INFO 71540 --- [http-nio-9990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 20:51:02.835  INFO 71540 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 20:51:02.845  INFO 71540 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-02-27 20:51:03.135 ERROR 71540 --- [http-nio-9990-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-9990-exec-1] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "blogPageResult.result" (template: "index" - line 97, col 12)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "blogPageResult.result" (template: "index" - line 97, col 12)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'result' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 70 common frames omitted
+
+2020-02-27 20:51:03.135 ERROR 71540 --- [http-nio-9990-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'result' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.3.RELEASE.jar:5.2.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.30.jar:9.0.30]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+
+2020-02-27 20:54:41.923  INFO 65900 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 65900 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 20:54:41.933 DEBUG 65900 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 20:54:41.933  INFO 65900 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 20:54:41.983  INFO 65900 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 20:54:41.983  INFO 65900 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 20:54:42.923  INFO 65900 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 20:54:42.933  INFO 65900 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 20:54:42.933  INFO 65900 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 20:54:42.993  INFO 65900 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 20:54:42.993  INFO 65900 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1010 ms
+2020-02-27 20:54:43.353  INFO 65900 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 20:54:43.403  INFO 65900 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 20:54:43.573  INFO 65900 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 20:54:43.603  INFO 65900 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 20:54:43.603  INFO 65900 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 1.994 seconds (JVM running for 2.832)
+2020-02-27 20:54:47.973  INFO 65900 --- [http-nio-9990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 20:54:47.973  INFO 65900 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 20:54:47.973  INFO 65900 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2020-02-27 20:54:48.063  INFO 65900 --- [http-nio-9990-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-27 20:54:48.213 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:54:48.223 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:54:48.273 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:54:48.273 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:54:48.273 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:54:48.283 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:54:48.283 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:54:48.283 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:54:48.283 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:54:48.283 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:54:48.283 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:54:48.293 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:54:48.303 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:54:48.303 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:54:48.303 DEBUG 65900 --- [http-nio-9990-exec-3] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 20:54:48.303 DEBUG 65900 --- [http-nio-9990-exec-3] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 20:54:48.303 DEBUG 65900 --- [http-nio-9990-exec-3] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 20:55:56.686 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:55:56.686 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:55:56.696 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:55:56.706 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:55:56.716 DEBUG 65900 --- [http-nio-9990-exec-5] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:55:56.716 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:55:56.716 DEBUG 65900 --- [http-nio-9990-exec-5] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 20:55:56.716 DEBUG 65900 --- [http-nio-9990-exec-5] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 20:55:56.716 DEBUG 65900 --- [http-nio-9990-exec-5] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 20:56:55.172 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:56:55.172 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:56:55.182 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:56:55.192 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:56:55.202 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:56:55.202 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:56:55.202 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:56:55.212 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:56:55.212 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:56:55.212 DEBUG 65900 --- [http-nio-9990-exec-2] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 20:56:55.212 DEBUG 65900 --- [http-nio-9990-exec-2] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 20:56:55.212 DEBUG 65900 --- [http-nio-9990-exec-2] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:00.386 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:58:00.396 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 5(Integer), 5(Integer)
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 1
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 4(Integer)
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:04.023 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:58:04.033 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:04.033 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:58:04.033 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:58:04.033 DEBUG 65900 --- [http-nio-9990-exec-2] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:58:04.033 DEBUG 65900 --- [http-nio-9990-exec-2] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 2(Integer)
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:58:05.216 DEBUG 65900 --- [http-nio-9990-exec-4] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 5(Integer), 5(Integer)
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 1
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:58:06.636 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 4(Integer)
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:58:06.646 DEBUG 65900 --- [http-nio-9990-exec-6] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:58:08.236 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.TypeMapper.getTypeById    : ==>  Preparing: select * from type where id = ? 
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.TypeMapper.getTypeById    : ==> Parameters: 2(Integer)
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:58:08.246 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.TypeMapper.getTypeById    : <==      Total: 1
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:13.326 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 20:58:13.336 DEBUG 65900 --- [http-nio-9990-exec-3] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 20:58:17.366 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 20:58:17.366 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 20:58:17.376 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:58:17.376 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:58:17.376 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:58:17.376 DEBUG 65900 --- [http-nio-9990-exec-9] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:59:03.674 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:03.684 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:59:03.694 DEBUG 65900 --- [http-nio-9990-exec-7] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:59:03.694 DEBUG 65900 --- [http-nio-9990-exec-7] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:59:03.694 DEBUG 65900 --- [http-nio-9990-exec-7] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 20:59:03.694 DEBUG 65900 --- [http-nio-9990-exec-7] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 20:59:03.694 DEBUG 65900 --- [http-nio-9990-exec-7] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 20:59:08.008 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 20:59:08.018 DEBUG 65900 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 20:59:08.848 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 20:59:08.848 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 20:59:08.848 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 20:59:08.848 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 20:59:08.858 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 20:59:08.858 DEBUG 65900 --- [http-nio-9990-exec-5] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:12:52.821  INFO 83140 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 83140 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 22:12:52.824 DEBUG 83140 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 22:12:52.825  INFO 83140 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 22:12:52.887  INFO 83140 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 22:12:52.887  INFO 83140 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 22:12:53.929  INFO 83140 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 22:12:53.937  INFO 83140 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 22:12:53.937  INFO 83140 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 22:12:54.008  INFO 83140 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 22:12:54.008  INFO 83140 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1121 ms
+2020-02-27 22:12:54.389  INFO 83140 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 22:12:54.443  INFO 83140 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 22:12:54.617  INFO 83140 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 22:12:54.653  INFO 83140 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 22:12:54.655  INFO 83140 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 2.181 seconds (JVM running for 3.087)
+2020-02-27 22:13:08.827  INFO 83140 --- [http-nio-9990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 22:13:08.828  INFO 83140 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 22:13:08.840  INFO 83140 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-02-27 22:13:08.920  INFO 83140 --- [http-nio-9990-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-27 22:13:09.078 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 22:13:09.094 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 22:13:09.141 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:13:09.141 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:13:09.143 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:13:09.150 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 22:13:09.152 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 22:13:09.153 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 22:13:09.154 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 22:13:09.160 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 22:13:09.160 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 22:13:09.164 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:13:09.165 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 22:13:09.165 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:13:09.166 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:13:09.167 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 22:13:09.169 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 22:13:09.170 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 22:13:09.171 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 22:13:09.171 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 22:13:09.172 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:13:09.172 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 22:13:09.172 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:13:09.173 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:13:09.174 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 22:13:09.174 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:13:09.175 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:13:09.175 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 22:13:09.175 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:13:09.176 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:13:09.176 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 22:13:09.183 DEBUG 83140 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 22:13:09.183 DEBUG 83140 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 22:13:09.185 DEBUG 83140 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 22:13:09.185 DEBUG 83140 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 22:13:09.186 DEBUG 83140 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 22:13:13.405 DEBUG 83140 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 22:13:13.405 DEBUG 83140 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 22:13:13.407 DEBUG 83140 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:13:13.407 DEBUG 83140 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:13:13.408 DEBUG 83140 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:13:13.408 DEBUG 83140 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:27:19.809  INFO 72828 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 72828 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 22:27:19.812 DEBUG 72828 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 22:27:19.813  INFO 72828 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 22:27:19.856  INFO 72828 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 22:27:19.857  INFO 72828 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 22:27:20.766  INFO 72828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 22:27:20.772  INFO 72828 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 22:27:20.772  INFO 72828 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 22:27:20.832  INFO 72828 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 22:27:20.832  INFO 72828 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 975 ms
+2020-02-27 22:27:21.195  INFO 72828 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 22:27:21.249  INFO 72828 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 22:27:21.418  INFO 72828 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 22:27:21.451  INFO 72828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 22:27:21.453  INFO 72828 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 1.957 seconds (JVM running for 2.777)
+2020-02-27 22:27:26.381  INFO 72828 --- [http-nio-9990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 22:27:26.381  INFO 72828 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 22:27:26.390  INFO 72828 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-02-27 22:27:26.449  INFO 72828 --- [http-nio-9990-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-27 22:27:26.610 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 22:27:26.625 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 22:27:26.680 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:27:26.680 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:27:26.684 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:27:26.692 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 22:27:26.694 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 22:27:26.694 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 22:27:26.695 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 22:27:26.702 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 22:27:26.702 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 22:27:26.704 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:27:26.704 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 22:27:26.706 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:27:26.708 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:27:26.709 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 22:27:26.713 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 22:27:26.713 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 22:27:26.714 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 22:27:26.715 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 22:27:26.715 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:27:26.715 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 22:27:26.716 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:27:26.716 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:27:26.716 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 22:27:26.718 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:27:26.718 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:27:26.718 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 22:27:26.719 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:27:26.719 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:27:26.719 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 22:27:26.724 DEBUG 72828 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 22:27:26.724 DEBUG 72828 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 22:27:26.725 DEBUG 72828 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 22:27:26.725 DEBUG 72828 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 22:27:26.726 DEBUG 72828 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 22:27:28.053 DEBUG 72828 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 22:27:28.053 DEBUG 72828 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 22:27:28.055 DEBUG 72828 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:27:28.056 DEBUG 72828 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:27:28.057 DEBUG 72828 --- [http-nio-9990-exec-6] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:27:28.058 DEBUG 72828 --- [http-nio-9990-exec-6] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:27:28.115 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:27:28.115 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:27:28.116 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 0
+2020-02-27 22:28:06.024 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.saveComment   : ==>  Preparing: INSERT INTO comment (nick_name, email, content, create_time, parent_comment_id, blog_id) values (?,?,?,?,?,?) 
+2020-02-27 22:28:06.028 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.saveComment   : ==> Parameters: decade(String), 2320322504@qq.com(String), 写的真好(String), 2020-02-27 22:28:06.023(Timestamp), null, 17(Long)
+2020-02-27 22:28:06.033 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.saveComment   : <==    Updates: 1
+2020-02-27 22:28:06.034 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:28:06.034 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:28:06.035 DEBUG 72828 --- [http-nio-9990-exec-6] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 1
+2020-02-27 22:28:13.714 DEBUG 72828 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 22:28:13.715 DEBUG 72828 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 22:28:13.716 DEBUG 72828 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:28:13.716 DEBUG 72828 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:28:13.717 DEBUG 72828 --- [http-nio-9990-exec-2] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:28:13.717 DEBUG 72828 --- [http-nio-9990-exec-2] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:28:13.723 DEBUG 72828 --- [http-nio-9990-exec-2] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:28:13.723 DEBUG 72828 --- [http-nio-9990-exec-2] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:28:13.724 DEBUG 72828 --- [http-nio-9990-exec-2] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 1
+2020-02-27 22:28:48.004 DEBUG 72828 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.saveComment   : ==>  Preparing: INSERT INTO comment (nick_name, email, content, create_time, parent_comment_id, blog_id) values (?,?,?,?,?,?) 
+2020-02-27 22:28:48.005 DEBUG 72828 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.saveComment   : ==> Parameters: angel(String), 2320322504@qq.com(String), 是的，简直太好了(String), 2020-02-27 22:28:48.004(Timestamp), null, 17(Long)
+2020-02-27 22:28:48.009 DEBUG 72828 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.saveComment   : <==    Updates: 1
+2020-02-27 22:28:48.009 DEBUG 72828 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:28:48.010 DEBUG 72828 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:28:48.011 DEBUG 72828 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 2
+2020-02-27 22:28:50.726 DEBUG 72828 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 22:28:50.726 DEBUG 72828 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 22:28:50.728 DEBUG 72828 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:28:50.728 DEBUG 72828 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:28:50.729 DEBUG 72828 --- [http-nio-9990-exec-8] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:28:50.729 DEBUG 72828 --- [http-nio-9990-exec-8] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:28:50.734 DEBUG 72828 --- [http-nio-9990-exec-8] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:28:50.734 DEBUG 72828 --- [http-nio-9990-exec-8] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:28:50.737 DEBUG 72828 --- [http-nio-9990-exec-8] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 2
+2020-02-27 22:42:48.487  INFO 87136 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 87136 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 22:42:48.487 DEBUG 87136 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 22:42:48.487  INFO 87136 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 22:42:48.557  INFO 87136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 22:42:48.557  INFO 87136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 22:42:49.494  INFO 87136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 22:42:49.504  INFO 87136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 22:42:49.504  INFO 87136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 22:42:49.564  INFO 87136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 22:42:49.564  INFO 87136 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1007 ms
+2020-02-27 22:42:49.934  INFO 87136 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 22:42:49.985  INFO 87136 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 22:42:50.165  INFO 87136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 22:42:50.195  INFO 87136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 22:42:50.195  INFO 87136 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 2.061 seconds (JVM running for 2.936)
+2020-02-27 22:43:03.577  INFO 87136 --- [http-nio-9990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 22:43:03.577  INFO 87136 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 22:43:03.587  INFO 87136 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-02-27 22:43:03.657  INFO 87136 --- [http-nio-9990-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-27 22:43:03.817 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 22:43:03.827 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 22:43:03.877 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:43:03.877 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:43:03.877 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:43:03.887 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 22:43:03.887 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 22:43:03.887 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 22:43:03.887 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:43:03.897 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:43:03.907 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 22:43:03.917 DEBUG 87136 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 22:43:03.917 DEBUG 87136 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 22:43:03.917 DEBUG 87136 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 22:43:03.917 DEBUG 87136 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 22:43:03.917 DEBUG 87136 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 22:43:06.870 DEBUG 87136 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 22:43:06.870 DEBUG 87136 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 22:43:06.880 DEBUG 87136 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:43:06.880 DEBUG 87136 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:43:06.880 DEBUG 87136 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:43:06.880 DEBUG 87136 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:43:06.920 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:43:06.920 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:43:06.920 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 2
+2020-02-27 22:44:03.895 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.saveComment   : ==>  Preparing: INSERT INTO comment (nick_name, email, content, create_time, parent_comment_id, blog_id) values (?,?,?,?,?,?) 
+2020-02-27 22:44:03.904 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.saveComment   : ==> Parameters: god(String), 2320322504@qq.com(String), emmmmmmmm(String), 2020-02-27 22:44:03.895(Timestamp), null, 17(Long)
+2020-02-27 22:44:03.904 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.saveComment   : <==    Updates: 1
+2020-02-27 22:44:03.904 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:44:03.904 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:44:03.904 DEBUG 87136 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 3
+2020-02-27 22:50:16.249  INFO 83624 --- [restartedMain] com.gwg.MyblogsIiApplication             : Starting MyblogsIiApplication on LAPTOP-TO2RP89D with PID 83624 (D:\Work\IDEA\finalStudy\myblogs_ii\target\classes started by Archangel in D:\Work\IDEA\finalStudy\myblogs_ii)
+2020-02-27 22:50:16.249 DEBUG 83624 --- [restartedMain] com.gwg.MyblogsIiApplication             : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-02-27 22:50:16.249  INFO 83624 --- [restartedMain] com.gwg.MyblogsIiApplication             : No active profile set, falling back to default profiles: default
+2020-02-27 22:50:16.319  INFO 83624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-27 22:50:16.319  INFO 83624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-27 22:50:17.401  INFO 83624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9990 (http)
+2020-02-27 22:50:17.411  INFO 83624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 22:50:17.411  INFO 83624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 22:50:17.461  INFO 83624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 22:50:17.461  INFO 83624 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1142 ms
+2020-02-27 22:50:17.861  INFO 83624 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-27 22:50:17.921  INFO 83624 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-27 22:50:18.101  INFO 83624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-27 22:50:18.151  INFO 83624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9990 (http) with context path ''
+2020-02-27 22:50:18.161  INFO 83624 --- [restartedMain] com.gwg.MyblogsIiApplication             : Started MyblogsIiApplication in 2.261 seconds (JVM running for 3.156)
+2020-02-27 22:50:29.397  INFO 83624 --- [http-nio-9990-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-27 22:50:29.397  INFO 83624 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-27 22:50:29.407  INFO 83624 --- [http-nio-9990-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-02-27 22:50:29.447  INFO 83624 --- [http-nio-9990-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-02-27 22:50:29.607 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==>  Preparing: SELECT * FROM blog LIMIT ? , ? 
+2020-02-27 22:50:29.627 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : ==> Parameters: 0(Integer), 5(Integer)
+2020-02-27 22:50:29.667 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:50:29.667 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:50:29.677 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:50:29.677 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.listBlog       : <==      Total: 5
+2020-02-27 22:50:29.687 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==>  Preparing: SELECT count(id) FROM blog 
+2020-02-27 22:50:29.687 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : ==> Parameters: 
+2020-02-27 22:50:29.687 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.BlogMapper.countBlog      : <==      Total: 1
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==>  Preparing: select * from type 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : ==> Parameters: 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 6(Integer)
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 2(Integer)
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======>  Preparing: select * from user where id = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : ======> Parameters: 0(Integer)
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.UserMapper.findUserById   : <======      Total: 1
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 1
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 1(Integer)
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 3(Integer)
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 5(Integer)
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 0
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====>  Preparing: select * from blog where type = ? 
+2020-02-27 22:50:29.697 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : ====> Parameters: 4(Integer)
+2020-02-27 22:50:29.707 DEBUG 83624 --- [http-nio-9990-exec-1] c.gwg.mapper.BlogMapper.getBlogByTypeId  : <====      Total: 5
+2020-02-27 22:50:29.707 DEBUG 83624 --- [http-nio-9990-exec-1] com.gwg.mapper.TypeMapper.getAll         : <==      Total: 6
+2020-02-27 22:50:29.707 DEBUG 83624 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==>  Preparing: select id,title from blog where recommend = 1 
+2020-02-27 22:50:29.707 DEBUG 83624 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : ==> Parameters: 
+2020-02-27 22:50:29.707 DEBUG 83624 --- [http-nio-9990-exec-1] c.g.m.BlogMapper.getRecommendBlogTitle   : <==      Total: 2
+2020-02-27 22:50:32.167 DEBUG 83624 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : ==>  Preparing: select * from blog where id = ? 
+2020-02-27 22:50:32.167 DEBUG 83624 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : ==> Parameters: 17(Long)
+2020-02-27 22:50:32.167 DEBUG 83624 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====>  Preparing: select * from user where id = ? 
+2020-02-27 22:50:32.167 DEBUG 83624 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : ====> Parameters: 0(Integer)
+2020-02-27 22:50:32.167 DEBUG 83624 --- [http-nio-9990-exec-7] com.gwg.mapper.UserMapper.findUserById   : <====      Total: 1
+2020-02-27 22:50:32.167 DEBUG 83624 --- [http-nio-9990-exec-7] com.gwg.mapper.BlogMapper.getBlogById    : <==      Total: 1
+2020-02-27 22:50:32.237 DEBUG 83624 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:50:32.237 DEBUG 83624 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:50:32.237 DEBUG 83624 --- [http-nio-9990-exec-7] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 3
+2020-02-27 22:51:19.805 DEBUG 83624 --- [http-nio-9990-exec-3] c.gwg.mapper.CommentMapper.saveComment   : ==>  Preparing: INSERT INTO comment (nick_name, email, content, create_time, parent_comment_id, blog_id) values (?,?,?,?,?,?) 
+2020-02-27 22:51:19.815 DEBUG 83624 --- [http-nio-9990-exec-3] c.gwg.mapper.CommentMapper.saveComment   : ==> Parameters: lucky(String), 2320322504@qq.com(String), hahahhahhahha(String), 2020-02-27 22:51:19.805(Timestamp), null, 17(Long)
+2020-02-27 22:51:19.815 DEBUG 83624 --- [http-nio-9990-exec-3] c.gwg.mapper.CommentMapper.saveComment   : <==    Updates: 1
+2020-02-27 22:51:19.815 DEBUG 83624 --- [http-nio-9990-exec-3] c.gwg.mapper.CommentMapper.listComment   : ==>  Preparing: select * from comment where blog_id = ? 
+2020-02-27 22:51:19.815 DEBUG 83624 --- [http-nio-9990-exec-3] c.gwg.mapper.CommentMapper.listComment   : ==> Parameters: 17(Long)
+2020-02-27 22:51:19.815 DEBUG 83624 --- [http-nio-9990-exec-3] c.gwg.mapper.CommentMapper.listComment   : <==      Total: 4

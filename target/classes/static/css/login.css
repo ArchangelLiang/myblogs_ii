@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 50px;
+}
+.pageTop,
+.pageFloor{
+	width: 100%;
+	height: 8rem;
+}
+.pageTop {
+	background-color: #DFDFDF;
+}
+.pageFloor {
+	
+	background-color: #000000;
+}
+.form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 11.8rem;
+	height: 9.8rem;
+	background-color: white;
+	font-size: 0.4rem;
+	border: 0.2rem solid #EDEEF0;
+}
+.form form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 8rem;
+	height: 7rem;
+	/* background-color: orange; */
+	transform: translate(-50%,-50%);
+	text-align: center;
+	line-height: 2rem;
+	padding-top: 1rem;
+}
+.form form input {
+	border: none;
+	border-bottom: 1px solid #ebebeb;
+	height: 1rem;
+	width: 6rem;
+	font-size: 0.4rem;
+	padding-left: 5px;
+}
+.form form input[type="button"] {
+	background-color: deepskyblue;
+	color: white;
+	font-size: 0.3rem;
+	height: 0.6rem;
+	border: none;
+}
+.form form input[type="button"]:hover {
+	background-color: #3385ff;
+}
+@keyframes logo_move{
+	0% {
+		top: 1rem;
+		right: 50rem;
+	}
+	100% {
+		top: 1rem;
+		right: 1rem;;
+	}
+}
+.logo {
+	position: absolute;
+	/* top: 1rem;
+	right: 1rem; */
+	width: 2rem;
+	height: 0.5rem;
+	text-align: center;
+	line-height: 0.5rem;
+	color: #A9A9A9;
+	font-size: 0.2rem;
+	background-color: #F5F5F5;
+	border: 0.1rem solid #CCCCCC;
+	box-shadow:1px 1px 1px 1px #000000;
+	transition: all 2s;
+	animation: logo_move 3s;
+	animation-fill-mode: forwards;
+}
+@keyframes rotate{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.title {
+	position: absolute;
+	left: 50%;
+	top: 3%;
+	/* transform: translateX(-50%); */
+	margin-left: -0.9rem;
+	width: 1.8rem;
+	height: 1.8rem;
+	background-color: white;
+	z-index: 1;
+	border: 0.1rem solid #CCCCCC;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 1.8rem;
+	font-weight: 700;
+	font-size: 1rem;
+	transition: all 1s;
+	animation: rotate 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+.lone {
+	position: absolute;
+	top: 11%;
+	height: 0.4rem;
+	width: 100%;
+	background-color: #CCCCCC;
+	border: 0.1rem solid #EDEEF0;
+}
+.personal {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0.3rem;
+	font-size: 0.3rem;
+	color: #CCCCCC;
+}
+.errorInfo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 0.7rem;
+	width: 6rem;
+	background-color: deeppink;
+	color: white;
+	text-align: center;
+	line-height: 0.7rem;
+	box-shadow:1px 1px 1px 1px #666666;
+	border-radius: 3%;
+	display: none;
+	transition: all 0.5s;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>4xx错误页面</title>
+    <link rel="stylesheet" href="../static/css/normal.css"  th:href="@{/css/normal.css}">
+    <link rel="stylesheet" href="../static/css/common.css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}" />
+    <script src="../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+
+    <!--引入导航模块-->
+    <nav th:replace="~{common_fragment::nav('')}"></nav>
+
+    <!--错误-->
+    <div class="row" style="margin-right: 0!important;margin-left: 0!important;padding: 5em;margin-bottom: 3em;margin-top: 3em;">
+        <div style="padding: 9em;border: 2px solid #ffcccc;background: rgba(255,204,204,0.5);">
+            <h2 style="opacity: 1;color: black;">4XX错误</h2>
+            <h5 style="color: lightpink;font-weight: 700;">对不起，您访问的资源不存在</h5>
+        </div>
+    </div>
+    <!--引入页脚-->
+    <footer th:replace="~{common_fragment::footer}"></footer>
+</body>
+</html>

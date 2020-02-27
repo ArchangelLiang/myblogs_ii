@@ -1,0 +1,75 @@
+/* 归档模块 */
+.my-total {
+	margin: 0 120px;
+}
+.my-total-list {
+	margin: 0 120px;
+	font-size: 16px;
+}
+.my-total-list li:hover {
+	background-color: #f5f5f5; !important;
+}
+.my-total-body {
+	height: 70px;
+	font-size: 25px;
+}
+@media screen and (max-width: 991px) {
+	.my-total,
+	.my-total-list{
+		margin: 0 60px;
+	}
+	.my-total-body {
+		font-size: 22px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.my-total,
+	.my-total-list{
+		margin: 0 10px;
+	}
+	.my-total-body {
+		font-size: 19px;
+	}
+}
+.my-item-content {
+	float: left;
+	margin-left: 30px;
+}
+.my-item-mark {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 20px;
+	height: 20px;
+	width: 60px;
+	line-height: 16px;
+	border: 2px solid deepskyblue;
+	border-radius: 5px;
+	font-size: 12px;
+	color: deepskyblue;
+}
+.my-item-mark::before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	width: 8px;
+	height: 8px;
+	border: 2px solid deepskyblue;
+	border-right: none;
+	border-bottom: none;
+	transform: translateX(-21px) rotate(-45deg);
+	background-color: white;
+}
+.my-item-mark2 {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 25px;
+	line-height: 21px;
+	color: orange;
+	font-size: 12px;
+	border: 2px solid orange;
+	border-radius: 5px;
+}

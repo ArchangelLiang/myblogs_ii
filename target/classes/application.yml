@@ -1,0 +1,10 @@
+server:
+  port: 9990
+  error:
+    include-exception: true
+logging:
+  level:
+    root: info
+    com.gwg: debug
+  file:
+    name: logs/myblog_log.log

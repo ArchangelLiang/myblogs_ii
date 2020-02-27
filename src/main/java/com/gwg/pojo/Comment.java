@@ -1,6 +1,6 @@
 package com.gwg.pojo;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 public class Comment {
@@ -18,7 +18,7 @@ public class Comment {
 
     private List<Comment> childComment;
 
-    private Comment parentComment;
+    private Integer parentCommentId;
 
     public User getUser() {
         return user;
@@ -46,6 +46,22 @@ public class Comment {
         this.content = content;
         this.avatar = avatar;
         this.createTime = createTime;
+    }
+
+    public List<Comment> getChildComment() {
+        return childComment;
+    }
+
+    public void setChildComment(List<Comment> childComment) {
+        this.childComment = childComment;
+    }
+
+    public Integer getParentCommentId() {
+        return parentCommentId;
+    }
+
+    public void setParentCommentId(Integer parentCommentId) {
+        this.parentCommentId = parentCommentId;
     }
 
     public Integer getId() {

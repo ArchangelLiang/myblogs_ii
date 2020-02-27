@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>博客发布</title>
+    <link rel="stylesheet" href="../../static/css/normal.css" th:href="@{/css/normal.css}"/>
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" href="../../static/css/admin_publish.css" th:href="@{/css/admin_publish.css}"/>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../../static/css/common_footer.css" th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../../static/css/common_footer.mobile.css" th:href="@{/css/common_footer.mobile.css}"/>
+    <!--集成markDown插件-->
+    <link rel="stylesheet" href="../../static/lib/editor_md/css/editormd.min.css" th:href="@{/lib/editor_md/css/editormd.min.css}">
+    <script src="../../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script src="../../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+    <script src="../../static/lib/editor_md/editormd.min.js" th:src="@{/lib/editor_md/editormd.min.js}"></script>
+    <script>
+            //集成markdown脚本
+            var contentEditor;
+
+            $(function() {
+                contentEditor = editormd("md-content", {
+                    width   : "100%",
+                    height  : 640,
+                    syncScrolling : "single",
+                    // path    : "../../static/lib/editor_md/lib/"
+                    path: "/lib/editor_md/lib/"
+                });
+
+                /*
+                // or
+                testEditor = editormd({
+                    id      : "test-editormd",
+                    width   : "90%",
+                    height  : 640,
+                    path    : "../lib/"
+                });
+                */
+
+                let flagChange = document.getElementById('flagChange');
+                $('.flag').click(function(){
+                    flagChange.innerHTML = this.innerHTML;
+                });
+
+                let backPageBtn = document.getElementById('backPageBtn');
+                backPageBtn.addEventListener('click',function(){
+                    window.history.back();
+                });
+
+                let nav_blocks = document.querySelector('.my-nav-bottom-block').querySelectorAll('div');
+                for (let i = 0; i < nav_blocks.length; i++) {
+                    nav_blocks[i].addEventListener('click', function () {
+                        let brothers = this.parentNode.children;
+                        for (let j = 0; j < brothers.length; j++) {
+                            brothers[j].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "my-nav-bottom-block-active");
+                    });
+                }
+                $("button[name='publish']").click(function(){
+                    let id,flag,title,content,typeId,recommend,shareStatement,appreciation,commentAble,firstPicture,published,createTime;
+                    id = $("input[name='id']").val();
+                    createTime = $("input[name='createTime']").val();
+                    flag = flagChange.innerHTML;
+                    title = $("input[name='title']").val();
+                    content = $("textarea[name='content']").val();
+                    $("option[name='typeId']").each(function(){
+                        if ($(this).prop('selected')){
+                            typeId = $(this).val();
+                        }
+                    });
+                    recommend = $("input[name='recommend']").prop('checked')? 1 : 0;
+                    shareStatement = $("input[name='shareStatement']").prop('checked')? 1 : 0;
+                    appreciation = $("input[name='appreciation']").prop('checked')? 1 : 0;
+                    commentAble = $("input[name='commentAble']").prop('checked')? 1 : 0;
+                    firstPicture = $("input[name='firstPicture']").val();
+                    published = $(this).attr('data-published');
+                    $.ajax({
+                        type: 'post',
+                        url: 'http://localhost:9990/admin/saveBlog',
+                        data: {id: id,flag: flag,title: title,content: content,'type.id': typeId,recommend: recommend,shareStatement: shareStatement,appreciation: appreciation,commentAble: commentAble,firstPicture: firstPicture,published: published,createTime: createTime},
+                        success: function(data){
+                            console.log('收到服务器返回的数据：' + data);
+                            if (data.status === '成功'){
+                                alert('操作成功');
+                                window.location.href = data.redirectUrl;
+                            } else {
+                                alert('操作失败');
+                            }
+                        },
+                        error: function(){
+                          alert('出错了');
+                        }
+                    });
+                });
+            });
+    </script>
+</head>
+<body class="container-fluid">
+<!--导航模块-->
+<nav th:replace="admin/admin_fragment::admin_nav('b')" class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">博客<span class="sr-only">(current)</span></a></li>
+                <li><a href="categories.html">分类</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img class="img-circle my-header" style="width: 23px; "
+                                                  src="../../static/image/header.jpg " alt="">decade <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="panel panel-default">
+    <div class="panel-body my-nav-bottom-body">
+        <div class="my-nav-bottom-block" style="float: right;margin-right: 3%;height: 100%">
+            <div class="my-nav-bottom-block-active" style="border-right: none;">发布</div>
+            <div class="">列表</div>
+        </div>
+    </div>
+</div>
+<!--博客发布-->
+<!--博客标题-->
+<div class="my-publish-title row my-margin-control">
+    <input type="hidden" name="id" th:value="${updateBlog == null} ? '':${updateBlog.id}">
+    <input type="hidden" name="createTime" th:value="${updateBlog == null} ? '':${updateBlog.createTime}">
+    <div class="input-group col-md-12" style="padding-left: 10%;padding-right: 10%;">
+        <div class="input-group input-group-lg">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"  aria-expanded="false"><span id="flagChange" th:text="${updateBlog == null} ? _:${updateBlog.flag}">原创</span> <span class="caret"></span></button>
+                <ul class="dropdown-menu" style="min-width: 0 !important;z-index: 99999;">
+                    <li><a class="flag" href="#">原创</a></li>
+                    <li><a class="flag" href="#">转载</a></li>
+                    <li><a class="flag" href="#">翻译</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+            <input type="text" name="title" th:value="${updateBlog == null} ? '':${updateBlog.title}" class="form-control" placeholder="输入标题">
+        </div>
+    </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+<!--博客内容-->
+<div class="row my-margin-control" style="margin-bottom: 3em!important;">
+    <div style="padding-left: 10%;padding-right: 10%;">
+        <div id="md-content" style="z-index: 9999!important;">
+            <textarea class="form-control col-md-12" rows="8" th:text="${updateBlog == null} ? '':${updateBlog.content}" th:value="${updateBlog == null} ? '':${updateBlog.content}" name="content" style="display: none;"></textarea>
+        </div>
+    </div>
+</div>
+<!--分类与标签以及checkbox-->
+<div class="row my-margin-control">
+    <div class="col-md-12" style="padding-left: 10%;padding-right: 10%">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group input-group">
+                    <span class="input-group-addon" style="background-color: white!important;">分类</span>
+                    <select class="form-control">
+                        <option name="typeId" th:each="type:${typeList}" value="9" th:selected="${updateBlog == null} ? '':${updateBlog.type.id == type.id}" th:value="${type.id}" th:text="${type.name}">javaSE</option>
+                        <!--<option>框架技术</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>JavaScript</option>-->
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group input-group">
+                    <span class="input-group-addon" style="background-color: white!important;">标签</span>
+                    <select class="form-control">
+                        <option>个人笔记</option>
+                        <option>问题解决</option>
+                        <option>个人见解</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--checkbox-->
+        <div class="row" style="padding: 1.5em 2em;">
+            <label class="checkbox-inline" >
+                <input type="checkbox" name="recommend" th:checked="${updateBlog == null} ? false:${updateBlog.recommend == 1}" value="option1"> 推荐
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="shareStatement" th:checked="${updateBlog == null} ? false:${updateBlog.shareStatement == 1}" value="option1"> 转载声明
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="appreciation" th:checked="${updateBlog == null} ? false:${updateBlog.appreciation == 1}" value="option1"> 打开赞赏
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="commentAble" th:checked="${updateBlog == null} ? false:${updateBlog.commentAble == 1}" value="option1">打开评论
+            </label>
+        </div>
+        <!--首图引用链接-->
+        <div class="row" style="padding: 0 1em;margin-bottom: 2em;">
+            <div class="input-group">
+                <span class="input-group-addon">链接</span>
+                <input type="text" name="firstPicture" th:value="${updateBlog == null} ? '':${updateBlog.firstPicture}" class="form-control" placeholder="首图链接">
+            </div>
+        </div>
+        <!--操作按钮-->
+        <div class="row" style="padding: 0 1em;">
+            <div style="float: right;">
+                <button id="backPageBtn" class="btn btn-default">返回</button>
+                <button name="publish" class="btn btn-success" id="my" data-published="0" th:attr="published=0">保存</button>
+                <button name="publish" class="btn btn-info" th:attr="published=1">发布</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 页脚 -->
+<footer class="row " style="margin-top: 3em!important;">
+    <div class="footer-top row ">
+        <div class="footer-top-p ">
+            <div class="footer-one col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">联系我</p>
+                <p class="col-sm-4 col-md-12 ">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12 ">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12 ">
+                <img src="../../static/image/personalCode.jpg" th:src="@{/image/personalCode.jpg}"/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom ">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>

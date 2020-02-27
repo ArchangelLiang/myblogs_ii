@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>博客管理</title>
+    <link rel="stylesheet" href="../../static/css/normal.css" th:href="@{/css/normal.css}"/>
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" href="../../static/css/admin.css" th:href="@{/css/admin.css}"/>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../../static/css/common_footer.css"
+          th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../../static/css/common_footer.mobile.css"
+          th:href="@{/css/common_footer.mobile.css}"/>
+    <script src="../../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script src="../../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+    <script>
+        window.addEventListener('load', function () {
+            let nav_blocks = document.querySelector('.my-nav-bottom-block').querySelectorAll('div');
+            for (let i = 0; i < nav_blocks.length; i++) {
+                nav_blocks[i].addEventListener('click', function () {
+                    let brothers = this.parentNode.children;
+                    for (let j = 0; j < brothers.length; j++) {
+                        brothers[j].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "my-nav-bottom-block-active");
+                });
+            }
+            let main = $("#my-manage-blog-main")
+            main.on('click', '.deleteBlog', function () {
+                if (confirm("确定删除吗？")){
+                    let id = this.getAttribute('blogId');
+                    $.ajax({
+                        url: 'http://localhost:9990/admin/deleteBlog',
+                        type: 'post',
+                        data: {id: id},
+                        success: function (jsonObj) {
+                            $(document.querySelector('#my-manage-blog-body')).remove();
+                            $('#my-manage-blog-main').append(jsonObj);
+                        },
+                        error: function () {
+                            alert('出错了');
+                        }
+                    });
+                }
+            });
+
+            function searchBlog() {
+                if ($(this).parent().prop('class') === 'disabled') {
+                    return false;
+                }
+                let typeId, title, recommend, pageNum;
+                $('.typeOption').each(function () {
+                    if ($(this).prop("selected")) {
+                        if ($(this).val() !== "-1") {
+                            typeId = this.value;
+                        }
+                    }
+                });
+                title = $('#blogTitleInput').val();
+                $('.recommendOption').each(function () {
+                    if ($(this).prop("selected")) {
+                        if ($(this).val() !== "-1") {
+                            recommend = this.value;
+                        }
+                    }
+                });
+                pageNum = $(this).attr("pageNum");
+                $.ajax({
+                    url: 'http://localhost:9990/admin/listTypeForJson',
+                    type: 'post',
+                    data: {title: title, typeId: typeId, recommend: recommend, pageNum: pageNum},
+                    success: function (jsonObj) {
+                        $(document.querySelector('#my-manage-blog-body')).remove();
+                        $('#my-manage-blog-main').append(jsonObj);
+                    },
+                    error: function () {
+                        alert('出错了');
+                    }
+                });
+            }
+
+            let changePageBtn = document.getElementById('changePageBtn');
+            changePageBtn.onclick = searchBlog;
+
+
+            main.on('click', '.changePageBtn', searchBlog);
+        });
+    </script>
+</head>
+<body class="container-fluid">
+<!--导航模块-->
+<nav th:replace="admin/admin_fragment::admin_nav('b')" class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">博客<span class="sr-only">(current)</span></a></li>
+                <li><a href="categories.html">分类</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img class="img-circle my-header" style="width: 23px; "
+                                                  src="../../static/image/header.jpg " alt="">decade <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="panel panel-default" style="margin-bottom: 3em;">
+    <div class="panel-body my-nav-bottom-body">
+        <div class="my-nav-bottom-block" style="float: right;margin-right: 3%;height: 100%">
+            <div class="" style="border-right: none;">发布</div>
+            <div class="my-nav-bottom-block-active">列表</div>
+        </div>
+    </div>
+</div>
+<!--后台管理-搜索-->
+<div class="my-margin-control panel panel-default my-admin-manage-search">
+    <div class="panel-body">
+        <form class="form-inline my-search">
+            <div class="form-group my-search-inp">
+                <input type="email" class="form-control" id="blogTitleInput" placeholder="标题">
+            </div>
+            <div class="form-group my-search-inp">
+                <select id="blogTypeIdInput" class="form-control">
+                    <option class="typeOption" value="-1" selected>选择分类</option>
+                    <option class="typeOption" th:each="type:${typeList}" th:text="${type.name}" th:value="${type.id}"
+                            value="1">java
+                    </option>
+                </select>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <select id="recommendBlog" class="form-control">
+                        <option class="recommendOption" value="-1" selected>是否推荐</option>
+                        <option class="recommendOption" value="1">推荐</option>
+                        <option class="recommendOption" value="0">不推荐</option>
+                    </select>
+                </label>
+            </div>
+            <button type="button" class="btn btn-info" id="changePageBtn" th:attr="pageNum=1" style="margin-left: 3em">
+                <span class="glyphicon glyphicon-search" style="margin-right: 5px"></span>搜索
+            </button>
+        </form>
+    </div>
+</div>
+<!--列表-->
+<div id="my-manage-blog-main" class="panel panel-default my-margin-control my-admin-manage-list">
+    <div id="my-manage-blog-body" th:fragment="blogList" class="panel-body my-table-body">
+        <table class="table text-center" style="border-bottom: 1px solid #CCCCCC;margin-bottom: 0 !important;">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="blog:${blogPageResult.result}">
+                <td th:text="${blogStat.count}">1</td>
+                <td th:text="${blog.title}">
+                    spring源码分析
+                </td>
+                <td th:text="${blog.type.name}">
+                    java框架
+                </td>
+                <td th:text="${blog.recommend == 1}?'是':'否'">
+                    是
+                </td>
+                <td th:text="${blog.updateTime}">
+                    2020-01-10
+                </td>
+                <td>
+                    <a th:href="@{/admin/toPublish(id=${blog.id})}" class="btn btn-info my-btn-edit">编辑</a>
+                    <a th:attr="blogId=${blog.id}" href="javascript:void(0);"
+                       class="btn btn-danger my-btn-delete deleteBlog">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="row"
+             style="position: relative;margin-left: 0 !important;margin-right: 0 !important;min-height: 4em;">
+            <!--分页-->
+            <nav aria-label="Page navigation" th:if="${blogPageResult.pageNums.size() != 0}" style="float: left">
+                <ul class="pagination">
+                    <li th:class="${blogPageResult.isFirstPage()}?'disabled':''">
+                        <a class="changePageBtn" href="javascript:void(0)"
+                           th:attr="pageNum=${blogPageResult.currentPage  - 1}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:each="pageNum:${blogPageResult.pageNums}"
+                        th:class="${pageNum == blogPageResult.currentPage}?'active':''"><a class="changePageBtn"
+                                                                                           th:attr="pageNum=${pageNum}"
+                                                                                           th:text="${pageNum}"
+                                                                                           href="javascript:void(0)">1</a>
+                    </li>
+                    <li th:class="${blogPageResult.isLastPage()}?'disabled':''">
+                        <a class="changePageBtn" href="javascript:void(0)"
+                           th:attr="pageNum=${blogPageResult.currentPage  + 1}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!--新增-->
+            <a th:href="@{/admin/toPublish}" class="btn btn-info"
+               style="position: absolute;right: 2em;top: 50%;transform: translateY(-50%)">新增
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 页脚 -->
+<footer class="row" th:replace="admin/admin_fragment::footer" style="margin-top: 5em!important;">
+    <div class="footer-top row ">
+        <div class="footer-top-p ">
+            <div class="footer-one col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">联系我</p>
+                <p class="col-sm-4 col-md-12 ">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12 ">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12 ">
+                <img src="../../static/image/personalCode.jpg" th:src="@{/image/personalCode.jpg}"/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom ">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>

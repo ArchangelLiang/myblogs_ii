@@ -1,0 +1,123 @@
+body {
+	background-image: url(../image/main_back.png);
+	padding: 0 !important;
+}
+@media screen and (min-width: 768px) {
+	.primary {
+		padding-left: 5em;
+		padding-right: 5em;
+	}
+}
+.my-nav {
+	border-radius: 0 !important;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+@media screen and (max-width: 991px) {
+	body {
+		font-size: 10px !important;
+	}
+}
+.primary {
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+}
+/* ---------top of index page---------- */
+li {
+	list-style: none;
+}
+.my-blog {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.my-blog-title {
+	border-bottom: 1px solid #CCCCCC;
+	height: 60px;
+	line-height: 60px;
+	color: #888888;
+	background-color: white;
+}
+.my-blog-title strong {
+	font-size: 23px;
+	color: black;
+}
+.my-blog-img {
+	width: 100%;
+	margin-top: 10px;
+}
+.my-blog-img-control {
+	padding: 10px;
+}
+.my-blog-mark {
+	float: right;
+}
+@media screen and (max-width: 761px) {
+	.my-blog-text h3,
+	.my-blog-text h1 {
+		font-size: 18px;
+	}
+}
+.my-blog-text-title {
+	margin-bottom: 4em!important;
+}
+.my-give-money button {
+	border-color: red;
+	color: red;
+	background-color: white;
+}
+.my-blog-explain {
+	color: #888888;
+}
+.my-leave-msg {
+	padding: 0;
+}
+.my-leave-msg li {
+	border-bottom: 1px solid #CCCCCC;
+	margin-top: 5px;
+}
+.my-fixed-list {
+	position: fixed;
+	bottom: 20em;
+	right: 2em;
+}
+.my-fixed-list li:hover {
+	background-color: #F5F5F5;
+}
+.my-categories-hidden,
+.my-wechat-hidden {
+	display: none;
+	position: absolute;
+	top: 50%;
+	right: 120%;
+	/*bottom: 70px;*/
+	min-width: 60px;
+	min-height: 30px;
+	background-color: white;
+	border: 1px solid #DDDDDD;
+	border-radius: 5px;
+}
+.my-categories-hidden {
+	transform: translateY(-50%);
+}
+.my-categories-hidden::after,
+.my-wechat-hidden::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -3%;
+	width: 12px;
+	height: 12px;
+	background-color: white;
+	transform: translateY(-50%) rotate(45deg);
+	border-right: 1px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
+}
+.my-wechat-hidden {
+	/*bottom: -30%;*/
+	transform: translateY(-50%);
+}
+.my-wechat-hidden::after {
+	top: 50%;
+	right: -5%;
+	transform: translateY(-50%) rotate(45deg);
+}

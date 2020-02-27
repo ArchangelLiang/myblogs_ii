@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>fragment</title>
+</head>
+<body>
+<!--admin导航模块抽取-->
+<nav th:fragment="admin_nav(t)" class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="" th:class="${t} == 'b'?'active':''"><a th:href="@{/admin/listBlog}" href="index.html">博客<span class="sr-only">(current)</span></a></li>
+                <li  th:class="${t} == 'c'?'active':''"><a th:href="@{/admin/listType}" href="categories.html">分类</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img class="img-circle my-header" style="width: 23px; "
+                                                  src="../../static/image/header.jpg" th:src="@{/image/header.jpg}" alt=""><span th:text="${session.user.nickName}">decade</span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" th:href="@{/admin/logout}">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--通用底部模块抽取-->
+<footer th:fragment="footer" class="row" style="margin-top: 5em;">
+    <div class="footer-top row">
+        <div class="footer-top-p">
+            <div class="footer-one col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">编程之道</p>
+                <p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">编程之道</p>
+                <p class="col-sm-4 col-md-12">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12">
+                <p class="col-sm-4 col-md-12">联系我</p>
+                <p class="col-sm-4 col-md-12">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12">
+                <img th:src="@{/image/personalCode.jpg}" src="../static/image/personalCode.jpg"  alt=""/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>

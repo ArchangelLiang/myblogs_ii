@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title th:text="${updateType == null}?'新增分类':'编辑分类'">新增分类</title>
+    <link rel="stylesheet" href="../../static/css/normal.css" th:href="@{/css/normal.css}"/>
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" href="../../static/css/admin.css" th:href="@{/css/admin.css}"/>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" media="screen and (min-width: 992px)" href="../../static/css/common_footer.css"
+          th:href="@{/css/common_footer.css}"/>
+    <link rel="stylesheet" media="screen and (max-width: 991px)" href="../../static/css/common_footer.mobile.css"
+          th:href="@{/css/common_footer.mobile.css}"/>
+    <script src="../../static/js/jquery-3.4.1.min.js" th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    <script src="../../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+    <script>
+        window.addEventListener('load', function () {
+            let nav_blocks = document.querySelector('.my-nav-bottom-block').querySelectorAll('div');
+            for (let i = 0; i < nav_blocks.length; i++) {
+                nav_blocks[i].addEventListener('click', function () {
+                    let brothers = this.parentNode.children;
+                    for (let j = 0; j < brothers.length; j++) {
+                        brothers[j].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "my-nav-bottom-block-active");
+                });
+            }
+            let errorHint = document.getElementById('errorHint');
+            if (errorHint.innerHTML != null && errorHint.innerHTML.trim() !== ''){
+                setTimeout(function(){
+                    errorHint.style.display = 'none';
+                },3000);
+            }
+            let submitBtn = document.getElementById('submit_btn');
+            let form = document.querySelector('form');
+            console.log(form);
+            submitBtn.addEventListener('click',function(){
+                let typeInput = document.getElementById('typeInput');
+                let content = typeInput.value;
+                if (content === '' || content.trim() === ''){
+                    typeInput.value = '';
+                    errorHint.innerHTML = '不能输入为空';
+                    errorHint.style.display = 'block';
+                    setTimeout(function(){
+                        errorHint.style.display = 'none';
+                    },3000);
+                } else {
+                    form.submit();
+                }
+            });
+        });
+    </script>
+</head>
+<body class="container-fluid">
+<!--导航模块-->
+<nav th:replace="admin/admin_fragment::admin_nav('c')" class="navbar navbar-inverse my-nav">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">博客<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="categories.html">分类</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"><img class="img-circle my-header" style="width: 23px; "
+                                                  src="../../static/image/header.jpg " alt="">decade <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="panel panel-default">
+    <div class="panel-body my-nav-bottom-body">
+        <div class="my-nav-bottom-block" style="float: right;margin-right: 3%;height: 100%">
+            <div th:text="${updateType == null}?'新增':'编辑'" class="my-nav-bottom-block-active"
+                 style="border-right: none;">新增
+            </div>
+            <div class="">列表</div>
+        </div>
+    </div>
+</div>
+<!--分类新增-->
+<form th:action="@{/admin/saveType}" method="post">
+    <div class="my-publish-title row my-margin-control" style="margin-bottom: 10%!important;margin-top: 10%!important;">
+        <!--错误消息-->
+        <div id="errorHint" th:text="${message == null}?'':${message}" th:styleappend="${message == null}?'display: none':''" class="text-center"
+             style="position: absolute;top: 18%;left: 50%;transform: translateX(-50%);height: 80px;width: 50%;line-height: 80px;font-size: 23px;color: red;border: 2px solid #ffcccc;background: rgba(255,204,204,0.5);">
+            操作失败
+        </div>
+        <!--用来在更新分类时存放id的隐藏框-->
+        <input type="hidden" name="id" th:value="${updateType == null}?'':${updateType.id}">
+        <div class="input-group col-md-12" style="padding-left: 10%;padding-right: 10%;">
+            <div class="input-group input-group-lg">
+                <div class="input-group-addon">分类名称</div><!-- /btn-group -->
+                <input id="typeInput" type="text" name="typeName" class="form-control"
+                       th:value="${updateType == null?(errorValue == null?'':errorValue):updateType.name}"
+                       placeholder="输入分类名称">
+            </div>
+        </div><!-- /input-group -->
+        <!--操作按钮-->
+        <div class="clearfix" style="padding: 3em 10em;">
+            <div style="float: right;">
+                <button class="btn btn-default">返回</button>
+                <button id="submit_btn" type="button" class="btn btn-info">提交</button>
+            </div>
+        </div>
+    </div><!-- /.col-lg-6 -->
+</form>
+<!-- 页脚 -->
+<footer class="row" th:replace="admin/admin_fragment::footer">
+    <div class="footer-top row ">
+        <div class="footer-top-p ">
+            <div class="footer-one col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-two col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">编程之道</p>
+                <p class="col-sm-4 col-md-12 ">学无止境（lifelong learning）</p>
+                <p class="col-sm-4 col-md-12 ">全民编程</p>
+            </div>
+            <div class="footer-three col-md-3 col-sm-12 ">
+                <p class="col-sm-4 col-md-12 ">联系我</p>
+                <p class="col-sm-4 col-md-12 ">QQ：2320322504</p>
+                <p class="col-sm-4 col-md-12 ">邮箱：2320322504@qq.com</p>
+            </div>
+            <div class="footer-four col-md-3 col-sm-12 ">
+                <img src="../../static/image/personalCode.jpg" th:src="@{/image/personalCode.jpg}"/>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom ">
+        <p>GWG个人博客 &copy;Archangel&nbsp;&nbsp;2019-03-27~2020-01-27</p>
+    </div>
+</footer>
+</body>
+</html>
